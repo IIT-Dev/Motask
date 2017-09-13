@@ -6,7 +6,7 @@ Demo : [motask.herokuapp.com](http://motask.herokuapp.com)
 
 - Run this command
 ```sh
-$ git clone https://github.com/gerrykastogi/Motask.git
+$ git clone https://github.com/gerrykastogi/Motask_HMIF.git
 $ composer install
 ```
 
