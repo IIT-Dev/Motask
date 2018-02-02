@@ -50,36 +50,36 @@
             <!-- Card -->
             <div class="container">
                 <div class="row">
-                    @if(count($projects) == 0)
+                    @if(count($web_projects) == 0)
                         <div class="text-center">
                             <img src="../img/stitch.png" style="width:220px"/>
                             <h1 class="oswald">Sorry, no available projects !!</h1>
                         </div>
                     @else
-                        @foreach($projects as $project)
+                        @foreach($web_projects as $web_project)
                             <div class="col-sm-4">
                                 <div class="card text-center">
                                     <div class="card-head bg-black-grey amber montserrat">
                                         <h6>Project Deadline</h6>
                                     </div>
                                     <div class="card-header mb-3 amber montserrat text-center" style="background-color:#323739">
-                                        <h5>{{date('M', strtotime($project->deadline))}}</h5>
-                                        <h1 style="font-size: 3.5rem">{{date('j', strtotime($project->deadline))}}</h1>
-                                        <h5>{{date('Y', strtotime($project->deadline))}}</h5>
+                                        <h5>{{date('M', strtotime($web_project->deadline))}}</h5>
+                                        <h1 style="font-size: 3.5rem">{{date('j', strtotime($web_project->deadline))}}</h1>
+                                        <h5>{{date('Y', strtotime($web_project->deadline))}}</h5>
                                     </div>    
                                     <div class="card-block">
-                                        <h3 class="card-title montserrat">{{$project->title}}</h3>
+                                        <h3 class="card-title montserrat">{{$web_project->title}}</h3>
                                         <h6 class="text-left">
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
                                                 <i class="fa fa-user fa-stack-1x"></i>
-                                            </span> Graciel
+                                            </span> Manpro
                                         </h6>
                                         <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan 
-                                            <span style="font-weight:600;font-size: 1.2rem">{{$project->total_programmer}}</span> 
+                                            <span style="font-weight:600;font-size: 1.2rem">{{$web_project->total_programmer}}</span>
                                             orang programmer
                                         </h6>
-                                        <a href="/project/{{$project->id}}" class="btn btn-primary dark-grey motask-button">Read More</a>
+                                        <a href="/project/{{$web_project->id}}" class="btn btn-primary dark-grey motask-button">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -93,25 +93,25 @@
             <!-- Card -->
             <div class="container">
                 <div class="row">
-                    @if(count($projects) == 0)
+                    @if(count($mobile_projects) == 0)
                         <div class="text-center">
                             <img src="../img/stitch.png" style="width:220px"/>
                             <h1 class="oswald">Sorry, no available projects !!</h1>
                         </div>
                     @else
-                        @foreach($projects as $project)
+                        @foreach($mobile_projects as $mobile_project)
                             <div class="col-sm-4">
                                 <div class="card text-center">
                                     <div class="card-head bg-black-grey amber montserrat">
                                         <h6>Project Deadline</h6>
                                     </div>
                                     <div class="card-header mb-3 amber montserrat text-center" style="background-color:#323739">
-                                        <h5>{{date('M', strtotime($project->deadline))}}</h5>
-                                        <h1 style="font-size: 3.5rem">{{date('j', strtotime($project->deadline))}}</h1>
-                                        <h5>{{date('Y', strtotime($project->deadline))}}</h5>
+                                        <h5>{{date('M', strtotime($mobile_project->deadline))}}</h5>
+                                        <h1 style="font-size: 3.5rem">{{date('j', strtotime($mobile_project->deadline))}}</h1>
+                                        <h5>{{date('Y', strtotime($mobile_project->deadline))}}</h5>
                                     </div>    
                                     <div class="card-block">
-                                        <h3 class="card-title montserrat">{{$project->title}}</h3>
+                                        <h3 class="card-title montserrat">{{$mobile_project->title}}</h3>
                                         <h6 class="text-left">
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
@@ -119,10 +119,10 @@
                                             </span> Graciel
                                         </h6>
                                         <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan 
-                                            <span style="font-weight:600;font-size: 1.2rem">{{$project->total_programmer}}</span> 
+                                            <span style="font-weight:600;font-size: 1.2rem">{{$mobile_project->total_programmer}}</span>
                                             orang programmer
                                         </h6>
-                                        <a href="/project/{{$project->id}}" class="btn btn-primary dark-grey motask-button">Read More</a>
+                                        <a href="/project/{{$mobile_project->id}}" class="btn btn-primary dark-grey motask-button">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -136,25 +136,25 @@
             <!-- Card -->
             <div class="container">
                 <div class="row">
-                    @if(count($projects) == 0)
+                    @if(count($desktop_projects) == 0)
                         <div class="text-center">
                             <img src="../img/stitch.png" style="width:220px"/>
                             <h1 class="oswald">Sorry, no available projects !!</h1>
                         </div>
                     @else
-                        @foreach($projects as $project)
+                        @foreach($desktop_projects as $desktop_project)
                             <div class="col-sm-4">
                                 <div class="card text-center">
                                     <div class="card-head bg-black-grey amber montserrat">
                                         <h6>Project Deadline</h6>
                                     </div>
                                     <div class="card-header mb-3 amber montserrat text-center" style="background-color:#323739">
-                                        <h5>{{date('M', strtotime($project->deadline))}}</h5>
-                                        <h1 style="font-size: 3.5rem">{{date('j', strtotime($project->deadline))}}</h1>
-                                        <h5>{{date('Y', strtotime($project->deadline))}}</h5>
+                                        <h5>{{date('M', strtotime($desktop_project->deadline))}}</h5>
+                                        <h1 style="font-size: 3.5rem">{{date('j', strtotime($desktop_project->deadline))}}</h1>
+                                        <h5>{{date('Y', strtotime($desktop_project->deadline))}}</h5>
                                     </div>    
                                     <div class="card-block">
-                                        <h3 class="card-title montserrat">{{$project->title}}</h3>
+                                        <h3 class="card-title montserrat">{{$desktop_project->title}}</h3>
                                         <h6 class="text-left">
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
@@ -162,10 +162,10 @@
                                             </span> Graciel
                                         </h6>
                                         <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan 
-                                            <span style="font-weight:600;font-size: 1.2rem">{{$project->total_programmer}}</span> 
+                                            <span style="font-weight:600;font-size: 1.2rem">{{$desktop_project->total_programmer}}</span>
                                             orang programmer
                                         </h6>
-                                        <a href="/project/{{$project->id}}" class="btn btn-primary dark-grey motask-button">Read More</a>
+                                        <a href="/project/{{$desktop_project->id}}" class="btn btn-primary dark-grey motask-button">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -179,25 +179,25 @@
             <!-- Card -->
             <div class="container">
                 <div class="row">
-                    @if(count($projects) == 0)
+                    @if(count($other_projects) == 0)
                         <div class="text-center">
                             <img src="../img/stitch.png" style="width:220px"/>
                             <h1 class="oswald">Sorry, no available projects !!</h1>
                         </div>
                     @else
-                        @foreach($projects as $project)
+                        @foreach($other_projects as $other_project)
                             <div class="col-sm-4">
                                 <div class="card text-center">
                                     <div class="card-head bg-black-grey amber montserrat">
                                         <h6>Project Deadline</h6>
                                     </div>
                                     <div class="card-header mb-3 amber montserrat text-center" style="background-color:#323739">
-                                        <h5>{{date('M', strtotime($project->deadline))}}</h5>
-                                        <h1 style="font-size: 3.5rem">{{date('j', strtotime($project->deadline))}}</h1>
-                                        <h5>{{date('Y', strtotime($project->deadline))}}</h5>
+                                        <h5>{{date('M', strtotime($other_project->deadline))}}</h5>
+                                        <h1 style="font-size: 3.5rem">{{date('j', strtotime($other_project->deadline))}}</h1>
+                                        <h5>{{date('Y', strtotime($other_project->deadline))}}</h5>
                                     </div>    
                                     <div class="card-block">
-                                        <h3 class="card-title montserrat">{{$project->title}}</h3>
+                                        <h3 class="card-title montserrat">{{$other_project->title}}</h3>
                                         <h6 class="text-left">
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
@@ -205,10 +205,10 @@
                                             </span> Graciel
                                         </h6>
                                         <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan 
-                                            <span style="font-weight:600;font-size: 1.2rem">{{$project->total_programmer}}</span> 
+                                            <span style="font-weight:600;font-size: 1.2rem">{{$other_project->total_programmer}}</span>
                                             orang programmer
                                         </h6>
-                                        <a href="/project/{{$project->id}}" class="btn btn-primary dark-grey motask-button">Read More</a>
+                                        <a href="/project/{{$other_project->id}}" class="btn btn-primary dark-grey motask-button">Read More</a>
                                     </div>
                                 </div>
                             </div>

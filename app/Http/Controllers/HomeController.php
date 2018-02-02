@@ -25,14 +25,16 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         //filter projects
-        $category = $request->query('category');
-        if($category != null)
-            $projects = Project::where('category', $category)->orderBy('deadline','asc')->get();
-        else
-            $projects = Project::orderBy('deadline','asc')->get();
+        $mobile_projects = Project::where('category','Mobile')->orderBy('deadline','asc')->get();
+        $desktop_projects = Project::where('category','Desktop')->orderBy('deadline','asc')->get();
+        $web_projects = Project::where('category','Website')->orderBy('deadline','asc')->get();
+        $other_projects = Project::where('category','Other')->orderBy('deadline','asc')->get();
 
         return view('home', [
-            'projects' => $projects
-            ]);
+            'mobile_projects' => $mobile_projects,
+            'desktop_projects' => $desktop_projects,
+            'web_projects' => $web_projects,
+            'other_projects' => $other_projects
+        ]);
     }
 }
