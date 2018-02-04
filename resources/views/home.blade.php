@@ -68,7 +68,7 @@
                                         <h5>{{date('Y', strtotime($web_project->deadline))}}</h5>
                                     </div>    
                                     <div class="card-block">
-                                        <h3 class="card-title montserrat">{{$web_project->title}}</h3>
+                                        <h5 class="card-title montserrat">{{$web_project->title}}</h5>
                                         <h6 class="text-left">
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
@@ -111,7 +111,7 @@
                                         <h5>{{date('Y', strtotime($mobile_project->deadline))}}</h5>
                                     </div>    
                                     <div class="card-block">
-                                        <h3 class="card-title montserrat">{{$mobile_project->title}}</h3>
+                                        <h5 class="card-title montserrat">{{$mobile_project->title}}</h5>
                                         <h6 class="text-left">
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
@@ -154,7 +154,7 @@
                                         <h5>{{date('Y', strtotime($desktop_project->deadline))}}</h5>
                                     </div>    
                                     <div class="card-block">
-                                        <h3 class="card-title montserrat">{{$desktop_project->title}}</h3>
+                                        <h5 class="card-title montserrat">{{$desktop_project->title}}</h4>
                                         <h6 class="text-left">
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
@@ -195,16 +195,16 @@
                                         <h5>{{date('M', strtotime($other_project->deadline))}}</h5>
                                         <h1 style="font-size: 3.5rem">{{date('j', strtotime($other_project->deadline))}}</h1>
                                         <h5>{{date('Y', strtotime($other_project->deadline))}}</h5>
-                                    </div>    
+                                    </div>
                                     <div class="card-block">
-                                        <h3 class="card-title montserrat">{{$other_project->title}}</h3>
+                                        <h5 class="card-title montserrat">{{$other_project->title}}</h5>
                                         <h6 class="text-left">
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
                                                 <i class="fa fa-user fa-stack-1x"></i>
                                             </span> Graciel
                                         </h6>
-                                        <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan 
+                                        <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan
                                             <span style="font-weight:600;font-size: 1.2rem">{{$other_project->total_programmer}}</span>
                                             orang programmer
                                         </h6>

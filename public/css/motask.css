@@ -227,6 +227,12 @@ footer a:hover {
 	opacity: 0.7;
 }
 
+.card-title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 /***** POST PROJECT SECTION *****/
 .row.no-margin {
 	margin: 0;
