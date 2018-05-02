@@ -59,7 +59,7 @@
                         @if(Auth::user()->role == 'admin')
                         <li>
                             <a href="/admin">
-                                <i class="fa fa-cog" aria-hidden="true"></i>&nbsp; Manage Admin
+                                <i class="fa fa-cog" aria-hidden="true"></i>&nbsp; Manage Users
                             </a>
                         </li>
                         @endif

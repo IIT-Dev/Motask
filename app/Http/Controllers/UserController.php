@@ -27,8 +27,14 @@ class UserController extends Controller
      */
     public function index($id)
     {
-        //deny access on others profile
-        if(Auth::user()->id != $id)
+        $requester_id = Auth::user()->id;
+        $requester = User::find($requester_id);
+        if($requester == null) {
+            abort(404);
+        }
+
+        //deny access on others profile except for admin
+        if(Auth::user()->id != $id && $requester->role != 'admin')
             abort(403);
 
         //retrieve user
