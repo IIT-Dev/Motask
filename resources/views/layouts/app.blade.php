@@ -13,7 +13,6 @@
     <!-- Styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/motask.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -44,8 +43,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <img class="logo-iit" src="../img/logo-2018.png"/>
+                    <a href="{{ url('/') }}">
+                        <img class="logo-iit" src="../img/iit-hor.png"/>
                     </a>
                 </div>
 
