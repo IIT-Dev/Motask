@@ -45,10 +45,17 @@ class AdminController extends Controller
         		], 200);
         	$user->role = $request->input('role');
         	$user->save();
-
+            $role = 'roleless.';
+            if ($user->role == 'admin') {
+                $role = 'admin.';
+            } else if ($user->role == 'project_manager') {
+                $role = 'project manager.';
+            } else if ($user->role == 'programmer') {
+                $role = 'programmer.';
+            }
         	return response()->json([
         			'status' => 'success',
-        			'message' => $user->email.' role changed to '.$user->role,
+        			'message' => $user->email.' role changed to '.$role,
         		], 200);
 
         } else {

@@ -41,7 +41,7 @@
 				<select class="form-control motask-input" name="status" required>
 					<option selected disabled>Status*</option>
 					<option value="Open" {{isset($project->status) && $project->status=='Open'? 'selected':''}}>Open</option>
-					<option value="On_Progress" {{isset($project->status) && $project->status=='On_Progress'? 'selected':''}}>In Progress</option>
+					<option value="In Progress" {{isset($project->status) && $project->status=='In Progress'? 'selected':''}}>In Progress</option>
 					<option value="Closed" {{isset($project->status) && $project->status=='Closed'? 'selected':''}}>Closed</option>
 				</select>
 			</div>
