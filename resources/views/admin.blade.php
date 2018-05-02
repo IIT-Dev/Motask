@@ -35,7 +35,7 @@
 						</div>
 					</div>
 				</form>
-			</div><!-- /.col-lg-6 -->
+			</div>
 			<div class="user-list">
 				<table class="table table-hover">
 				  	<tr>
