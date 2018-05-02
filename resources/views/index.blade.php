@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/motask.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     <style>
         body {
@@ -58,7 +58,7 @@
 
         <div class="container">
             <div class="content-login">
-                <img src="../img/logo-polos.png" />
+                <img class="homepage-logo" src="../img/logo-new.png" />
                 <h1 style="font-size:45px"> Motask</h1>
                 <h3>Place Where You Can Find Your Own Projects</h3>
                 <a href="auth/google" class="btn btn-warning btn-lg">
