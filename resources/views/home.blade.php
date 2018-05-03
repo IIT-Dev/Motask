@@ -53,7 +53,7 @@
                     @if(count($web_projects) == 0)
                         <div class="text-center">
                             <img src="../img/stitch.png" style="width:220px"/>
-                            <h1 class="oswald">Sorry, no available projects !!</h1>
+                            <h1 class="oswald">Sorry, no available projects :(</h1>
                         </div>
                     @else
                         @foreach($web_projects as $web_project)
@@ -96,7 +96,7 @@
                     @if(count($mobile_projects) == 0)
                         <div class="text-center">
                             <img src="../img/stitch.png" style="width:220px"/>
-                            <h1 class="oswald">Sorry, no available projects !!</h1>
+                            <h1 class="oswald">Sorry, no available projects :(</h1>
                         </div>
                     @else
                         @foreach($mobile_projects as $mobile_project)
@@ -139,7 +139,7 @@
                     @if(count($desktop_projects) == 0)
                         <div class="text-center">
                             <img src="../img/stitch.png" style="width:220px"/>
-                            <h1 class="oswald">Sorry, no available projects !!</h1>
+                            <h1 class="oswald">Sorry, no available projects :(</h1>
                         </div>
                     @else
                         @foreach($desktop_projects as $desktop_project)
@@ -182,7 +182,7 @@
                     @if(count($other_projects) == 0)
                         <div class="text-center">
                             <img src="../img/stitch.png" style="width:220px"/>
-                            <h1 class="oswald">Sorry, no available projects !!</h1>
+                            <h1 class="oswald">Sorry, no available projects :(</h1>
                         </div>
                     @else
                         @foreach($other_projects as $other_project)

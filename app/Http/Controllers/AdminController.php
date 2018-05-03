@@ -21,17 +21,14 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         if(Gate::allows('manage-admin')) {
-            $users = array();
-            if($request->nim != null)
-                $users = User::where('email', 'like', $request->nim.'%')->get();
+            $users = User::where('email', 'like', $request->nim.'%')->get();
 
             return view('admin', [
                 'users' => $users
-                ]);    
+                ]);
         } else {
             abort(403);
         }
-    	
     }
 
     public function manage(Request $request)

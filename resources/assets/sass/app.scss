@@ -348,3 +348,11 @@ footer a:hover {
 .user-list {
   margin: 10px 0 10px 0;
 }
+
+.profile {
+  margin: 15px;
+  padding: 15px;
+  &-info:hover {
+    background-color: #f7f7f7;
+  }
+}

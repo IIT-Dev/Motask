@@ -21,9 +21,32 @@
 <main>
 	<div class='container'>
 		<div class="col-md-8 col-md-offset-2">
-			<p>Name:{{$user->name}}</p>
-			<p>Email:{{$user->email}}</p>
-			<p>Role:{{$user->role}}</p>
+			{{--Profile--}}
+			<div class="profile">
+				<div class="card text-center">
+					<div class="card-header mb-3 amber montserrat text-center" style="background-color:#323739">
+						{{$user->name}}
+					</div>
+					<div class="card-block row">
+						<div class="col-xs-6 col-md-6 profile-info">
+							<div class="profile-title">
+								<span class="card-title montserrat">Email</span>
+							</div>
+							<div class="profile-content">
+								{{$user->email}}
+							</div>
+						</div>
+						<div class="col-xs-6 col-md-6 profile-info">
+							<div class="profile-title">
+								<span class="card-title montserrat">Role</span>
+							</div>
+							<div class="profile-content">
+								{{$user->role}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-8 col-md-offset-2">
 			<h3>{{$table_title}}</h3>

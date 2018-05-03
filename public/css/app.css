@@ -8054,4 +8054,13 @@ footer a:hover {
   margin: 10px 0 10px 0;
 }
 
+.profile {
+  margin: 15px;
+  padding: 15px;
+}
+
+.profile-info:hover {
+  background-color: #f7f7f7;
+}
+
 /*# sourceMappingURL=app.css.map */
