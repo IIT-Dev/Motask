@@ -17,4 +17,7 @@ class Project extends Authenticatable
     protected $guarded = [
         'id'
     ];
+    public function creator() {
+        return $this->belongsTo('App\User','created_by','email');
+    }
 }

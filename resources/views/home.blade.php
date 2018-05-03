@@ -116,7 +116,7 @@
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
                                                 <i class="fa fa-user fa-stack-1x"></i>
-                                            </span> Graciel
+                                            </span> {{$mobile_project->creator->name}}
                                         </h6>
                                         <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan 
                                             <span style="font-weight:600;font-size: 1.2rem">{{$mobile_project->total_programmer}}</span>
