@@ -73,7 +73,7 @@
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
                                                 <i class="fa fa-user fa-stack-1x"></i>
-                                            </span> Manpro
+                                            </span> {{$web_project->creator->name}}
                                         </h6>
                                         <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan 
                                             <span style="font-weight:600;font-size: 1.2rem">{{$web_project->total_programmer}}</span>
@@ -159,7 +159,7 @@
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
                                                 <i class="fa fa-user fa-stack-1x"></i>
-                                            </span> Graciel
+                                            </span> {{$desktop_project->creator->name}}
                                         </h6>
                                         <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan 
                                             <span style="font-weight:600;font-size: 1.2rem">{{$desktop_project->total_programmer}}</span>
@@ -202,7 +202,7 @@
                                             <span class="fa-stack fa-lg">
                                                 <i class="fa fa-circle fa-stack-2x amber"></i>
                                                 <i class="fa fa-user fa-stack-1x"></i>
-                                            </span> Graciel
+                                            </span> {{$other_project->creator->name}}
                                         </h6>
                                         <h6 class="text-left" style="line-height: 1.5">Proyek ini membutuhkan
                                             <span style="font-weight:600;font-size: 1.2rem">{{$other_project->total_programmer}}</span>
