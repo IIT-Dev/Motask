@@ -22,6 +22,7 @@ class CreateProjectsTable extends Migration
             $table->string('programmers', 300)->nullable();
             $table->string('status', 100);
             $table->string('specification_url', 300);
+            $table->integer('manpro_id')->nullable();
             $table->timestamps();
         });
     }
