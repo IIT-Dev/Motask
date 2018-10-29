@@ -48,7 +48,7 @@
 		</div>
 		<div class="row row-form">
 			<div class="col-md-12">
-				<input type="text" class="form-control motask-input" name="specification_url" value='{{isset($project->specification_url)? $project->specification_url:""}}' required placeholder="Specification URL*">
+				<input type="text" class="form-control motask-input" name="specification_desc" value='{{isset($project->specification_desc)? $project->specification_desc:""}}' required placeholder="Specification*">
 			</div>
 		</div>
 		<center><button type="submit" class="btn btn-primary transparent motask-button btn-lg">

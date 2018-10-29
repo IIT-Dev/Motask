@@ -49,7 +49,7 @@ class ProjectController extends Controller
             'number_of_programmers' => 'required',
             'budget' => 'numeric',
             'status' => 'required',
-            'specification_url' => 'required|max:300',
+            'specification_desc' => 'required|max:300',
         ]);
 
         if ($validator->fails()) {
@@ -68,7 +68,7 @@ class ProjectController extends Controller
         }
         $project->project_owner = $request->project_owner;
         $project->status = $request->status;
-        $project->specification_url = $request->specification_url;
+        $project->specification_desc = $request->specification_desc;
         $project->created_by = Auth::user()->email;
         $project->save();
 
@@ -99,7 +99,7 @@ class ProjectController extends Controller
             'number_of_programmers' => 'required',
             'budget' => 'numeric',
             'status' => 'required',
-            'specification_url' => 'required|max:300',
+            'specification_desc' => 'required|max:300',
         ]);
 
         if ($validator->fails()) {
@@ -122,7 +122,7 @@ class ProjectController extends Controller
         }
         $project->project_owner = $request->project_owner;
         $project->status = $request->status;
-        $project->specification_url = $request->specification_url;
+        $project->specification_desc = $request->specification_desc;
         $project->created_by = Auth::user()->email;
         $project->save();
 

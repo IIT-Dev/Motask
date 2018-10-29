@@ -66,7 +66,7 @@
                     <div class="row">
                         <div class="col-md-12 text-justify">
                             <h4 class="montserrat">Description</h4>
-                            <h5><a class="dark-grey" href="{{$project->specification_url}}" target="_blank">{{$project->specification_url}}</a></h5>
+                            <h5 class="dark-grey">{{$project->specification_desc}}</h5>
                         </div>
                     </div>
                     <div class="row text-center">
