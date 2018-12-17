@@ -55,6 +55,10 @@ class UserController extends Controller
         else if($user->role == 'admin') {
             $table_title = 'All Projects';
             $projects = Project::all();
+        } 
+        else if($user->role == 'marketing') {
+            $table_title = 'Projects Created';
+            $projects = Project::where('created_by', $user->email)->get();
         }
         
         return view('user', [

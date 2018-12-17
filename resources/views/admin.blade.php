@@ -52,6 +52,7 @@
 										<option value="admin" {{ $user->role=='admin'? 'selected':''}}>Admin</option>
 										<option value="project_manager" {{ $user->role=='project_manager'? 'selected':''}}>Project Manager</option>
 										<option value="programmer" {{ $user->role=='programmer'? 'selected':''}}>Programmer</option>
+										<option value="marketing" {{ $user->role=='marketing'? 'selected':''}}>Marketing</option>
 									</select>
 							</td>
 						</tr>

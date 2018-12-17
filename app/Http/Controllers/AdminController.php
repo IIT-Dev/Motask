@@ -49,6 +49,8 @@ class AdminController extends Controller
                 $role = 'project manager.';
             } else if ($user->role == 'programmer') {
                 $role = 'programmer.';
+            } else if ($user->role == 'marketing') {
+                $role = 'marketing.';
             }
         	return response()->json([
         			'status' => 'success',

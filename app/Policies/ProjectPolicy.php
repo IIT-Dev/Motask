@@ -30,7 +30,7 @@ class ProjectPolicy
      */
     public function create(User $user)
     {
-        $auth_roles = array('project_manager', 'admin');
+        $auth_roles = array('project_manager', 'admin', 'marketing');
         return in_array($user->role, $auth_roles);
     }
 
