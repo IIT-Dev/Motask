@@ -84,7 +84,7 @@
                         @endcan
                         <!-- Take Button -->
                         <button type="submit" class="btn btn-primary blue motask-button btn-lg">
-                            <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take Project
+                            <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Apply Project
                         </button>
                     </div>
                 </div>
