@@ -7848,6 +7848,18 @@ button.close {
   color: #01579b;
 }
 
+.btn-primary.lightblue,
+.btn-primary.lightblue:focus {
+  background-color: #2d7dd2;
+  border-color: #2d7dd2;
+}
+
+.btn-primary.lightblue:hover {
+  background-color: #323739;
+  border-color: #323739;
+  color: #2d7dd2;
+}
+
 /***** FORM *****/
 .row-form {
   padding-top: 15px;

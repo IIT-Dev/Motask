@@ -24,7 +24,7 @@
 		</div>
 		<div class="row row-form">
 			<div class="col-md-6">
-				<input type="date" class="form-control motask-input" name="deadline" value='{{isset($project->deadline)? $project->deadline:""}}' required>
+				<input type="text" class="form-control motask-input" name="deadline" value='{{isset($project->deadline)? $project->deadline:""}}' required placeholder="Deadline" onfocus="(this.type='date')">
 			</div>
 			<div class="col-md-6">
 				<div class="input-group motask-input">
@@ -48,7 +48,7 @@
 		</div>
 		<div class="row row-form">
 			<div class="col-md-12">
-				<input type="text" class="form-control motask-input" name="specification_desc" value='{{isset($project->specification_desc)? $project->specification_desc:""}}' required placeholder="Specification*">
+				<textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="specification_desc" value='{{isset($project->specification_desc)? $project->specification_desc:""}}' required placeholder="Specification*"></textarea>
 			</div>
 		</div>
 		<center><button type="submit" class="btn btn-primary transparent motask-button btn-lg">

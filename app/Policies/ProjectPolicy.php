@@ -57,4 +57,17 @@ class ProjectPolicy
     {
         return ($user->email == $project->created_by || $user->role == 'admin');
     }
+
+    /**
+     * Determine whether the user can take the project as Project Manager.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Project  $project
+     * @return mixed
+     */
+    public function takeAsPM(User $user, Project $project)
+    {
+        return ($user->role == 'project_manager' || $user->role == 'admin');
+    }
+
 }

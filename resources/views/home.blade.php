@@ -52,7 +52,6 @@
                 <div class="row">
                     @if(count($web_projects) == 0)
                         <div class="text-center">
-                            <img src="../img/stitch.png" style="width:220px"/>
                             <h1 class="oswald">Sorry, no available projects :(</h1>
                         </div>
                     @else
@@ -95,7 +94,6 @@
                 <div class="row">
                     @if(count($mobile_projects) == 0)
                         <div class="text-center">
-                            <img src="../img/stitch.png" style="width:220px"/>
                             <h1 class="oswald">Sorry, no available projects :(</h1>
                         </div>
                     @else
@@ -138,7 +136,6 @@
                 <div class="row">
                     @if(count($desktop_projects) == 0)
                         <div class="text-center">
-                            <img src="../img/stitch.png" style="width:220px"/>
                             <h1 class="oswald">Sorry, no available projects :(</h1>
                         </div>
                     @else
@@ -181,7 +178,6 @@
                 <div class="row">
                     @if(count($other_projects) == 0)
                         <div class="text-center">
-                            <img src="../img/stitch.png" style="width:220px"/>
                             <h1 class="oswald">Sorry, no available projects :(</h1>
                         </div>
                     @else
