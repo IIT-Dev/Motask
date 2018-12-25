@@ -81,7 +81,7 @@
                                 @if ($project->manpro_id == null)
                                     <h5>There's no PM yet</h5>
                                 @else
-                                    <h5>{{$project->manpro_id}}</h5> 
+                                    <h5>{{$manpro->name}}</h5> 
                                 @endif
                             </div>
                         </div>
@@ -91,6 +91,20 @@
                             <h4 class="montserrat">Description</h4>
                             <h5 class="dark-grey">
                                 <?php echo nl2br($project->specification_desc); ?>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-justify">
+                            <h4 class="montserrat">Contact Us</h4>
+                            <h5 class="dark-grey">
+                                Feel free to contact us if you are interested to get details of the project.
+                                <br><b><i class="fa fa-envelope"></i>
+                                @if ($project->manpro_id == null)
+                                    {{$project->created_by}}
+                                @else
+                                    {{$manpro->email}}
+                                @endif </b>
                             </h5>
                         </div>
                     </div>

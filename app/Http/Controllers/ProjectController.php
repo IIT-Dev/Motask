@@ -6,6 +6,7 @@ use Validator;
 use Auth;
 use DateTime;
 use App\Project;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -22,8 +23,11 @@ class ProjectController extends Controller
             abort(404);
         }
 
+        $manpro = User::find($project->manpro_id);
+
         return view('project.index', [
             'project' => $project,
+            'manpro' =>$manpro,
             ]);
     }
 
