@@ -21,6 +21,8 @@
 <main>
 	<div class='container'>
 		<div class="col-md-8 col-md-offset-2">
+			<div id="alert-area">
+			</div>
 			{{--Profile--}}
 			<div class="profile">
 				<div class="card text-center">
@@ -60,7 +62,17 @@
 					<tr>
 						<td><a href="/project/{{$project->id}}">{{$project->title}}</a></td>
 						<td>{{$project->deadline}}</td> 
-						<td>{{$project->status}}</td>
+						@if($user->role == 'programmer')
+							<td>{{$project->status}}</td>
+						@else
+							<td>
+								<select id="change-status" data-id="{{$project->id}}" required>
+									<option value="Open" {{isset($project->status) && $project->status=='Open'? 'selected':''}}>Open</option>
+									<option value="In Progress" {{isset($project->status) && $project->status=='In Progress'? 'selected':''}}>In Progress</option>
+									<option value="Closed" {{isset($project->status) && $project->status=='Closed'? 'selected':''}}>Closed</option>
+								</select>
+							</td>
+						@endif
 					</tr>
 				@endforeach
 			</table>
