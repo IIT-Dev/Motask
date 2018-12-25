@@ -23,10 +23,7 @@
 			</div>
 		</div>
 		<div class="row row-form">
-			<div class="col-md-6">
-				<input type="text" class="form-control motask-input" name="deadline" value='{{isset($project->deadline)? $project->deadline:""}}' required placeholder="Deadline" onfocus="(this.type='date')">
-			</div>
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<div class="input-group motask-input">
 					<span class="input-group-addon" id="budget-input">Rp.</span>
 					<input type="number" class="form-control motask-input" name="budget" aria-describedby="budget-input" value='{{isset($project->budget)? $project->budget:""}}' placeholder="Budget (Optional)">
@@ -35,15 +32,10 @@
 		</div>
 		<div class="row row-form">
 			<div class="col-md-6">
-				<input type="number" class="form-control motask-input" name="number_of_programmers" min="1" max="5" value='{{isset($project->total_programmer)? $project->total_programmer:""}}' required placeholder="Programmers*">
+				<input type="text" class="form-control motask-input" name="deadline" value='{{isset($project->deadline)? $project->deadline:""}}' required placeholder="Deadline" onfocus="(this.type='date')">
 			</div>
 			<div class="col-md-6">
-				<select class="form-control motask-input" name="status" required>
-					<option selected disabled>Status*</option>
-					<option value="Open" {{isset($project->status) && $project->status=='Open'? 'selected':''}}>Open</option>
-					<option value="In Progress" {{isset($project->status) && $project->status=='In Progress'? 'selected':''}}>In Progress</option>
-					<option value="Closed" {{isset($project->status) && $project->status=='Closed'? 'selected':''}}>Closed</option>
-				</select>
+				<input type="number" class="form-control motask-input" name="number_of_programmers" min="1" max="5" value='{{isset($project->total_programmer)? $project->total_programmer:""}}' required placeholder="Programmers*">
 			</div>
 		</div>
 		<div class="row row-form">

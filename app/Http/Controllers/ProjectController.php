@@ -49,7 +49,6 @@ class ProjectController extends Controller
             'deadline' => 'required',
             'number_of_programmers' => 'required',
             'budget' => 'numeric',
-            'status' => 'required',
             'specification_desc' => 'required|max:300',
         ]);
 
@@ -68,7 +67,7 @@ class ProjectController extends Controller
             $project->budget = $request->budget;
         }
         $project->project_owner = $request->project_owner;
-        $project->status = $request->status;
+        $project->status = 'Open';
         $project->specification_desc = $request->specification_desc;
         $project->created_by = Auth::user()->email;
         $project->save();

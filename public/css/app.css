@@ -1573,9 +1573,22 @@ p {
   line-height: 1.4;
 }
 
+.hide-less-768{
+  display: none;
+}
+.unhide-less-768{
+  display: block;
+}
+
 @media (min-width: 768px) {
   .lead {
     font-size: 21px;
+  }
+  .hide-less-768{
+    display: block;
+  }
+  .unhide-less-768{
+    display: none;
   }
 }
 
@@ -3072,6 +3085,7 @@ fieldset[disabled] .form-control {
 
 textarea.form-control {
   height: auto;
+  resize: none;
 }
 
 input[type="search"] {

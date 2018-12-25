@@ -52,8 +52,33 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
+
+                    <!-- Project Category Navigation Bar -->
+                    <ul class="unhide-less-768 nav navbar-nav montserrat" role="tablist">
+                        <li role="presentation" class="active">
+                            <a onclick="$('#app-navbar-collapse').attr('class', 'navbar-collapse collapse');" href="#website" aria-controls="website" role="tab" data-toggle="tab">
+                                <i class="fa fa-html5" aria-hidden="true"></i>&nbsp; Website
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a onclick="$('#app-navbar-collapse').attr('class', 'navbar-collapse collapse');" href="#mobile" aria-controls="mobile" role="tab" data-toggle="tab">
+                                <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; Mobile
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a onclick="$('#app-navbar-collapse').attr('class', 'navbar-collapse collapse');" href="#desktop" aria-controls="desktop" role="tab" data-toggle="tab">
+                                <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp; Desktop
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a onclick="$('#app-navbar-collapse').attr('class', 'navbar-collapse collapse');" href="#others" aria-controls="others" role="tab" data-toggle="tab">
+                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>&nbsp; Others
+                            </a>
+                        </li>
+                    </ul>
+
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
+                    <ul class="hide-less-768 nav navbar-nav">
                         &nbsp;
                     </ul>
 
@@ -73,7 +98,7 @@
                             </a>
                         </li>
                         @endcan
-                        <li>
+                        <li class="hide-less-768">
                             <a href="/home"><i class="fa fa-file" aria-hidden="true"></i>&nbsp; Projects</a>
                         </li>
                         <!-- Authentication Links -->
@@ -95,6 +120,7 @@
                             </li>
                         @endif
                     </ul>
+                    
                 </div>
             </div>
         </nav>

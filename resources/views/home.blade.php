@@ -20,7 +20,7 @@
 @section('content')
 
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs nav-justified montserrat" role="tablist">
+    <ul class="hide-less-768 nav nav-tabs nav-justified montserrat" role="tablist">
         <li role="presentation" class="active">
             <a href="#website" aria-controls="website" role="tab" data-toggle="tab">
                 <i class="fa fa-html5 fa-lg" aria-hidden="true"></i>&nbsp; Website
