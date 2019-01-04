@@ -171,4 +171,10 @@ class ProjectController extends Controller
             'message' => $project->title.' status changed to '.$status,
         ], 200);
     }
+
+    public function apply(Request $request)
+    {
+        $project = Project::find($request->input('project_id'));
+        return view('project.apply');
+    }
 }

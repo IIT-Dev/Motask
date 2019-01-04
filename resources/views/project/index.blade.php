@@ -122,9 +122,9 @@
                         </a>
                         @endcan
                         <!-- Take Button -->
-                        <button type="submit" class="btn btn-primary blue motask-button btn-lg">
+                        <a href="/project/{{$project->id}}/apply" class="btn btn-primary blue motask-button btn-lg">
                             <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Apply Project
-                        </button>
+                        </a>
                         <!-- Take As PM Button -->
                         @can('takeAsPM', $project)
                             @if ($project->manpro_id == null)
