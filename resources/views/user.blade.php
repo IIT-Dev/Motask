@@ -47,6 +47,42 @@
 							</div>
 						</div>
 					</div>
+					<div class="card-block row">
+						<div class="col-xs-6 col-md-6 profile-info">
+							<div class="profile-title">
+								<span class="card-title montserrat">Line</span>
+							</div>
+							<div class="profile-content">
+								{{$user->line}}
+							</div>
+						</div>
+						<div class="col-xs-6 col-md-6 profile-info">
+							<div class="profile-title">
+								<span class="card-title montserrat">Phone</span>
+							</div>
+							<div class="profile-content">
+								{{$user->phone}}
+							</div>
+						</div>
+					</div>
+					<div class="card-block row">
+						<div class="col-xs-6 col-md-6 profile-info">
+							<div class="profile-title">
+								<span class="card-title montserrat">LinkedIn</span>
+							</div>
+							<div class="profile-content">
+								{{$user->linkedin}}
+							</div>
+						</div>
+						<div class="col-xs-6 col-md-6 profile-info">
+							<div class="profile-title">
+								<span class="card-title montserrat">Git</span>
+							</div>
+							<div class="profile-content">
+								{{$user->git}}
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
