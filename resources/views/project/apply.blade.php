@@ -39,18 +39,18 @@
                         <div class="form-group">
                             <div class="row row-form">
                                 <div class="col-md-12">
-                                    <textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="motive" value='{{isset($project->specification_desc)? $project->specification_desc:""}}' required placeholder="Motive*"></textarea>
+                                    <textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="motive" value='{{isset($applicant->motive)? $applicant->motive:""}}' required placeholder="Motive*"></textarea>
                                 </div>
                             </div>
                             
                             <div class="row row-form">
                                 <div class="col-md-12">
-                                    <textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="questions" value='{{isset($project->specification_desc)? $project->specification_desc:""}}' required placeholder="Question*"></textarea>
+                                    <textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="questions" value='{{isset($applicant->questions)? $applicant->questions:""}}' required placeholder="Question*"></textarea>
                                 </div>
                             </div>
-                            {{-- <center><button type="submit" class="btn btn-primary transparent motask-button btn-lg">
-                                <i class="fa fa-paper-plane" aria-hidden="true"></i> {{$action=='create'? 'Post Project':'Update Project'}}
-                            </button></center> --}}
+                            <center><button type="submit" class="btn btn-primary transparent motask-button btn-lg">
+                                <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Apply
+                            </button></center>
                         </div>
                     </form>
 		  		</div>

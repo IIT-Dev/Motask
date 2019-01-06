@@ -31,7 +31,8 @@ Route::post('/project/edit', 'ProjectController@edit');
 Route::get('/project/{id}', 'ProjectController@getById')->where('id', '[0-9]+');
 Route::delete('/project/delete', 'ProjectController@delete');
 Route::patch('/project/manage-status','ProjectController@manageStatus');
-Route::get('/project/{id}/apply', 'ProjectController@apply');
+Route::get('/project/{id}/apply', 'ProjectController@showApplyForm');
+Route::post('/project/{id}/apply', 'ProjectController@apply');
 
 //home page
 Route::get('/home', 'HomeController@index');

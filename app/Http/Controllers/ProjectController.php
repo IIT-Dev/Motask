@@ -7,6 +7,7 @@ use Auth;
 use DateTime;
 use App\Project;
 use App\User;
+use App\Applicant;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -172,9 +173,33 @@ class ProjectController extends Controller
         ], 200);
     }
 
+
+    public function showApplyForm(Request $request){
+        $project = Project::find($request->input('project_id'));
+        return view('project.apply')->with('project_id', $project);
+    }
     public function apply(Request $request)
     {
-        $project = Project::find($request->input('project_id'));
-        return view('project.apply');
+        //validate input
+        $validator = Validator::make($request->all(), [
+            'motive' => 'required|max:250',
+            'questions' => 'required|max:250',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('project.apply')
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        $applicant = new applicant();
+        $project = Project::find($request->id);
+        $applicant->project_id = $project->id;
+        $applicant->applicant_id = Auth::user()->id;
+        $applicant->motive = $request->motive;
+        $applicant->questions = $request->questions;
+        $applicant->save();
+
+        return redirect('/home');
     }
 }
