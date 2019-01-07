@@ -109,7 +109,7 @@
                             <li>
                                 <a href="{{ url('/logout') }}" style="display:inline-block"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i> Logout&nbsp;
                                 </a>
                                 <a href="{{url('/user/'.Auth::user()->id)}}" style="display:inline-block">
                                     {{ Auth::user()->name }}
