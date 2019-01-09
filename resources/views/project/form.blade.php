@@ -40,7 +40,12 @@
 		</div>
 		<div class="row row-form">
 			<div class="col-md-12">
-				<textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="specification_desc" value='{{isset($project->specification_desc)? $project->specification_desc:""}}' required placeholder="Specification*"></textarea>
+				<textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="specification_desc"  required placeholder="Specification*">{{isset($project->specification_desc)? $project->specification_desc:""}}</textarea>
+			</div>
+		</div>
+		<div class="row row-form">
+			<div class="col-md-12">
+				<textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="notes" placeholder="Notes (will only be visible to project managers and marketings)">{{isset($project->notes)? $project->notes:""}}</textarea>
 			</div>
 		</div>
 		<center><button type="submit" class="btn btn-primary transparent motask-button btn-lg">

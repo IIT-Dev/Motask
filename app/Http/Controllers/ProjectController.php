@@ -28,7 +28,7 @@ class ProjectController extends Controller
 
         return view('project.index', [
             'project' => $project,
-            'manpro' =>$manpro,
+            'manpro' => $manpro,
             ]);
     }
 
@@ -55,6 +55,7 @@ class ProjectController extends Controller
             'number_of_programmers' => 'required',
             'budget' => 'numeric',
             'specification_desc' => 'required|max:300',
+            'notes' => 'max:300',
         ]);
 
         if ($validator->fails()) {
@@ -74,6 +75,7 @@ class ProjectController extends Controller
         $project->project_owner = $request->project_owner;
         $project->status = 'Open';
         $project->specification_desc = $request->specification_desc;
+        $project->notes = $request->notes;
         $project->created_by = Auth::user()->email;
         $project->save();
 
@@ -103,8 +105,8 @@ class ProjectController extends Controller
             'deadline' => 'required',
             'number_of_programmers' => 'required',
             'budget' => 'numeric',
-            'status' => 'required',
             'specification_desc' => 'required|max:300',
+            'notes' => 'max:300',
         ]);
 
         if ($validator->fails()) {
@@ -126,8 +128,8 @@ class ProjectController extends Controller
             $project->budget = null;
         }
         $project->project_owner = $request->project_owner;
-        $project->status = $request->status;
         $project->specification_desc = $request->specification_desc;
+        $project->notes = $request->notes;
         $project->created_by = Auth::user()->email;
         $project->save();
 
@@ -173,11 +175,13 @@ class ProjectController extends Controller
         ], 200);
     }
 
-
-    public function showApplyForm(Request $request){
+    public function showApplyForm(Request $request)
+    {
         $project = Project::find($request->input('project_id'));
+
         return view('project.apply')->with('project_id', $project);
     }
+
     public function apply(Request $request)
     {
         //validate input
