@@ -93,6 +93,9 @@
 				    <th>Title</th>
 				    <th>Deadline</th> 
 				    <th>Status</th>
+					@if($user->role!= 'programmer')
+					<th>Notes</th>
+					@endif
 			  	</tr>
 			  	@foreach($projects as $project)
 					<tr>
@@ -108,6 +111,7 @@
 									<option value="Closed" {{isset($project->status) && $project->status=='Closed'? 'selected':''}}>Closed</option>
 								</select>
 							</td>
+							<td>{{$project->notes}}</td>
 						@endif
 					</tr>
 				@endforeach
