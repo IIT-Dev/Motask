@@ -94,9 +94,9 @@
 					@if($user->role!= 'programmer')
 					<th></th>
 					@endif
-				    <th>Deadline</th> 
 				    <th>Status</th>
 					@if($user->role!= 'programmer')
+					<th>Applicants</th>
 					<th>Notes</th>
 					@endif
 			  	</tr>
@@ -109,19 +109,17 @@
 								<i class="fa fa-edit" aria-hidden="true"></i>&nbsp;
 							</a>
 						</td>
-						@endif
-						<td>{{$project->deadline}}</td> 
-						@if($user->role == 'programmer')
-							<td>{{$project->status}}</td>
-						@else
-							<td>
-								<select id="change-status" data-id="{{$project->id}}" required>
-									<option value="Open" {{isset($project->status) && $project->status=='Open'? 'selected':''}}>Open</option>
-									<option value="In Progress" {{isset($project->status) && $project->status=='In Progress'? 'selected':''}}>In Progress</option>
-									<option value="Closed" {{isset($project->status) && $project->status=='Closed'? 'selected':''}}>Closed</option>
-								</select>
-							</td>
-							<td>{{$project->notes}}</td>
+						<td>
+							<select id="change-status" data-id="{{$project->id}}" required>
+								<option value="Open" {{isset($project->status) && $project->status=='Open'? 'selected':''}}>Open</option>
+								<option value="In Progress" {{isset($project->status) && $project->status=='In Progress'? 'selected':''}}>In Progress</option>
+								<option value="Closed" {{isset($project->status) && $project->status=='Closed'? 'selected':''}}>Closed</option>
+							</select>
+						</td>
+						<td>{{$project->applicants}}</td>
+						<td>{{$project->notes}}</td>
+						@else($user->role == 'programmer')
+							<td>{{$project->status}}</td>							
 						@endif
 					</tr>
 				@endforeach
