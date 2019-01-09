@@ -35,7 +35,7 @@
 				<input type="text" class="form-control motask-input" name="deadline" value='{{isset($project->deadline)? $project->deadline:""}}' required placeholder="Deadline" onfocus="(this.type='date')">
 			</div>
 			<div class="col-md-6">
-				<input type="number" class="form-control motask-input" name="number_of_programmers" min="1" max="5" value='{{isset($project->total_programmer)? $project->total_programmer:""}}' required placeholder="Programmers*">
+				<input type="number" class="form-control motask-input" name="number_of_programmers" min="1" max="10" value='{{isset($project->total_programmer)? $project->total_programmer:""}}' required placeholder="Programmers*">
 			</div>
 		</div>
 		<div class="row row-form">
