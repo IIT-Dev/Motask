@@ -112,7 +112,7 @@
                                     <i class="fa fa-sign-out" aria-hidden="true"></i> Logout&nbsp;
                                 </a>
                                 <a href="{{url('/user/'.Auth::user()->id)}}" style="display:inline-block">
-                                    {{ Auth::user()->name }}
+                                <i class="fa fa-user" aria-hidden="true"></i> My Profile
                                 </a>
                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
