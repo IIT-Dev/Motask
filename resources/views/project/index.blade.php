@@ -94,6 +94,7 @@
                             </h5>
                         </div>
                     </div>
+                    <br>
                     <div class="row">
                         <div class="col-md-12 text-justify">
                             <h4 class="montserrat">Contact Us</h4>
@@ -139,6 +140,34 @@
                         
                         @endcan
                     </div>
+                    <br><br>
+                    <!-- List of Applicants -->
+                    @if ($applicants != null)
+                        @if ($applicants == 'None')
+                            <h3>No applicants yet</h3>
+                        @else
+                            <div class="col-md-8 col-md-offset-2">
+                                <h2>List of Applicants</h2>
+                                <h5>click the name to check profile</h5>
+                                <table class="table table-hover">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Motive</th>
+                                        <th>Questions</th>
+                                    </tr>
+                                    @foreach($applicants as $ap)
+                                        <tr>
+                                            <td>{{date('j M y - g.i', strtotime($ap->created_at))}}</td>
+                                            <td><a href="{{url('/user/'.$ap->applicant_id)}}">{{$ap->applicant_name}}</a></td>
+                                            <td>{{$ap->motive}}</td>
+                                            <td>{{$ap->questions}}</td>
+                                        </tr>
+                                    @endforeach
+                                </table>                            
+                            </div>
+                        @endif
+                    @endif
                 </div>
             </div>
         </div>

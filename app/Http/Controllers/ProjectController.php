@@ -26,9 +26,29 @@ class ProjectController extends Controller
 
         $manpro = User::find($project->manpro_id);
 
+        $requester_id = Auth::user()->id;
+        $requester = User::find($requester_id);
+        if ($requester == null) {
+            abort(404);
+        }
+
+        //If the requester is an admin or the project's Project Manager (manpro), show applicants
+        $applicants = array();
+        if ($requester->role == 'admin' || $requester->id == $project->manpro_id) {
+            $applicants = Applicant::where('project_id', $project->id)->get();
+            if ($applicants->isEmpty()) {
+                $applicants = 'None';
+            } else {
+                foreach ($applicants as &$ap) {
+                    $ap->applicant_name = User::find($ap->applicant_id)->name;
+                }
+            }
+        }
+
         return view('project.index', [
             'project' => $project,
             'manpro' => $manpro,
+            'applicants' => $applicants,
             ]);
     }
 
