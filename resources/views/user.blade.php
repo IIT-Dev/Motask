@@ -91,6 +91,9 @@
 			<table class="table table-hover">
 			  	<tr>
 				    <th>Title</th>
+					@if($user->role!= 'programmer')
+					<th></th>
+					@endif
 				    <th>Deadline</th> 
 				    <th>Status</th>
 					@if($user->role!= 'programmer')
@@ -100,6 +103,13 @@
 			  	@foreach($projects as $project)
 					<tr>
 						<td><a href="/project/{{$project->id}}">{{$project->title}}</a></td>
+						@if($user->role!= 'programmer')
+						<td>
+							<a href="/project/edit?id={{$project->id}}">
+								<i class="fa fa-edit" aria-hidden="true"></i>&nbsp;
+							</a>
+						</td>
+						@endif
 						<td>{{$project->deadline}}</td> 
 						@if($user->role == 'programmer')
 							<td>{{$project->status}}</td>
