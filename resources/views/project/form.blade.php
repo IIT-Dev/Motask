@@ -9,7 +9,7 @@
 			</div>
 			<div class="col-md-6">
 				<select class="form-control motask-input" name="category" required>
-					<option selected disabled>Category*</option>
+					<option selected disabled value="">Category*</option>
 					<option value="Website" {{isset($project->category) && $project->category=='Website'? 'selected':''}}>Website</option>
 					<option value="Mobile" {{isset($project->category) && $project->category=='Mobile'? 'selected':''}}>Mobile</option>
 					<option value="Desktop" {{isset($project->category) && $project->category=='Desktop'? 'selected':''}}>Desktop</option>
@@ -32,7 +32,7 @@
 		</div>
 		<div class="row row-form">
 			<div class="col-md-6">
-				<input type="text" class="form-control motask-input" name="deadline" value='{{isset($project->deadline)? $project->deadline:""}}' required placeholder="Deadline" onfocus="(this.type='date')">
+				<input type="text" class="form-control motask-input" name="deadline" value='{{isset($project->deadline)? $project->deadline:""}}' required placeholder="Deadline" onmouseenter="(this.type='date')">
 			</div>
 			<div class="col-md-6">
 				<input type="number" class="form-control motask-input" name="number_of_programmers" min="1" max="10" value='{{isset($project->total_programmer)? $project->total_programmer:""}}' required placeholder="Programmers*">
