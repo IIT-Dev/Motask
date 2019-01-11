@@ -66,7 +66,7 @@ class UserController extends Controller
                 $project->applicants = Applicant::where('project_id', $project->id)->count();
             }
         }
-        
+
         return view('user', [
             'user' => $user,
             'table_title' => $table_title,
@@ -74,7 +74,8 @@ class UserController extends Controller
             ]);
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $requester_id = Auth::user()->id;
         $requester = User::find($requester_id);
         if ($requester == null) {
@@ -96,7 +97,7 @@ class UserController extends Controller
             'line' => 'required|max:255',
             'phone' => 'required|max:255',
             'linkedin' => 'required|max:255',
-            'git' => 'required|max:255'
+            'git' => 'required|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -108,7 +109,7 @@ class UserController extends Controller
         // $this->authorize('update', $requester);
 
         $requester->phone = $request->phone;
-        $requester->linkedin= $request->linkedin;
+        $requester->linkedin = $request->linkedin;
         $requester->git = $request->git;
         if ($requester->line != null) {
             $requester->line = $request->line;
@@ -123,7 +124,7 @@ class UserController extends Controller
         if ($requester->linkedin != null) {
             $requester->linkedin = $request->linkedin;
         } else {
-            $requester->linkedin= '-';
+            $requester->linkedin = '-';
         }
         if ($requester->git != null) {
             $requester->git = $request->git;
@@ -135,7 +136,8 @@ class UserController extends Controller
         return redirect('/user/'.$requester_id);
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $requester_id = Auth::user()->id;
         $requester = User::find($requester_id);
         if ($requester == null) {
@@ -152,8 +154,9 @@ class UserController extends Controller
         if ($user == null) {
             abort(404);
         }
+
         return view('user.edit', [
-            'user' => $user
+            'user' => $user,
             ]);
     }
 }
