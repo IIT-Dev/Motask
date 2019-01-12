@@ -134,11 +134,11 @@
                         <!-- Take As PM Button -->
                         @can('takeAsPM', $project)
                             @if ($project->manpro_id == null)
-                                <button type="submit" class="btn btn-primary lightblue motask-button btn-lg">
+                                <button onclick="takeProject({{$requester_id}}, {{$project->id}})" class="btn btn-primary lightblue motask-button btn-lg">
                                     <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take As PM
                                 </button>
                             @else
-                                <button type="submit" class="btn btn-primary lightblue motask-button btn-lg" disabled>
+                                <button class="btn btn-primary lightblue motask-button btn-lg" disabled>
                                     <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take As PM
                                 </button>
                             @endif

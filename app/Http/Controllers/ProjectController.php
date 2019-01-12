@@ -47,6 +47,7 @@ class ProjectController extends Controller
         }
 
         return view('project.index', [
+            'requester_id' => $requester_id,
             'project' => $project,
             'manpro' => $manpro,
             'creator' => $creator,
@@ -226,6 +227,23 @@ class ProjectController extends Controller
         $applicant->questions = $request->questions;
 
         $applicant->save();
+
+        return redirect('/home');
+    }
+
+    public function take(Request $request)
+    {
+        $project = Project::find($request->input('project_id'));
+        if ($project == null) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Project not found',
+            ], 200);
+        }
+        $this->authorize('takeAsPM', $project);
+
+        $project->manpro_id = $request->input('manpro_id');
+        $project->save();
 
         return redirect('/home');
     }
