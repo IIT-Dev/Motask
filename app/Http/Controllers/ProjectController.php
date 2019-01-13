@@ -25,6 +25,7 @@ class ProjectController extends Controller
         }
 
         $manpro = User::find($project->manpro_id);
+        $creator = User::where('email', $project->created_by)->first();
 
         $requester_id = Auth::user()->id;
         $requester = User::find($requester_id);
@@ -48,6 +49,7 @@ class ProjectController extends Controller
         return view('project.index', [
             'project' => $project,
             'manpro' => $manpro,
+            'creator' => $creator,
             'applicants' => $applicants,
             ]);
     }
@@ -206,8 +208,8 @@ class ProjectController extends Controller
     {
         //validate input
         $validator = Validator::make($request->all(), [
-            'motive' => 'required|max:250',
-            'questions' => 'required|max:250',
+            'motive' => 'required|max:1024',
+            'questions' => 'required|max:1024',
         ]);
 
         if ($validator->fails()) {
@@ -222,6 +224,7 @@ class ProjectController extends Controller
         $applicant->applicant_id = Auth::user()->id;
         $applicant->motive = $request->motive;
         $applicant->questions = $request->questions;
+
         $applicant->save();
 
         return redirect('/home');

@@ -44,8 +44,10 @@ class UserController extends Controller
         }
 
         $projects = array();
+        $applied = array();
         //retrieve projects based on role
         if ($user->role == 'programmer') {
+            //if user is a programmer, have a list of projects taken and applied
             $table_title = 'Projects Taken';
             $projects = $user->projects;
         } elseif ($user->role == 'project_manager') {
@@ -64,7 +66,7 @@ class UserController extends Controller
                 $project->applicants = Applicant::where('project_id', $project->id)->count();
             }
         }
-
+        
         return view('user', [
             'user' => $user,
             'table_title' => $table_title,

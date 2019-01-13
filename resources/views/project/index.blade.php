@@ -100,12 +100,17 @@
                             <h4 class="montserrat">Contact Us</h4>
                             <h5 class="dark-grey">
                                 Feel free to contact us if you are interested to get details of the project.
-                                <br><b><i class="fa fa-envelope"></i>
                                 @if ($project->manpro_id == null)
-                                    {{$project->created_by}}
+                                    <b>
+                                        <br><i class="fa fa-envelope"></i> {{$creator->email}}
+                                        <br><i class="fab fa-line"></i> {{$creator->line}}
+                                    </b>
                                 @else
-                                    {{$manpro->email}}
-                                @endif </b>
+                                    <b>
+                                        <br><i class="fa fa-envelope"></i> {{$manpro->email}}
+                                        <br><i class="fab fa-line"></i> {{$manpro->line}}
+                                    </b>
+                                @endif 
                             </h5>
                         </div>
                     </div>
