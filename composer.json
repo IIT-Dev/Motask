@@ -9,7 +9,8 @@
         "laravel/framework": "5.5.*",
         "laravel/socialite": "^3.0",
         "doctrine/dbal": "^2.7",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "mopo922/laravel-treats": "^1.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
