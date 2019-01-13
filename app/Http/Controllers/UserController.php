@@ -67,10 +67,29 @@ class UserController extends Controller
             }
         }
 
+        $applications = array();
+        $applications = Applicant::where('applicant_id', Auth::user()->id)->get();
+        if ($applications->isEmpty()) {
+            $applications = 'None';
+        } else {
+            foreach ($applications as $ap) {
+                $project = Project::find($ap->project_id);
+                $ap->project_title = $project->title;
+                $ap->status = $project->status;
+                $ap->deadline = $project->deadline;
+                if ($project->manpro_id == null){
+                    $ap->manpro = 'None';
+                } else {
+                    $ap->manpro = User::find($project->manpro_id)->name;
+                }
+            }
+        }
+
         return view('user', [
             'user' => $user,
             'table_title' => $table_title,
             'projects' => $projects,
+            'applied' => $applications,
             ]);
     }
 

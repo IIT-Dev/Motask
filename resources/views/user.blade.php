@@ -128,6 +128,27 @@
 				@endforeach
 			</table>
 		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<h3>Applied Projects</h3>
+			<table class="table table-hover">
+					<tr>
+					<th>Date</th>
+					<th>Title</th>
+					<th>Status</th>
+					<th>Project Manager</th>
+					<th>Questions</th>
+					</tr>
+					@foreach($applied as $app)
+					<tr>
+						<td>{{date('j M y - g.i', strtotime($app->created_at))}}</td>
+						<td><a href="/project/{{$app->project_id}}">{{$app->project_title}}</a></td>
+						<td>{{$app->status}}</td>
+						<td>{{$app->manpro}}</td>
+						<td>{{$app->questions}}</td>
+					</tr>
+				@endforeach
+			</table>
+		</div>
 	</div>
 </main>
 @endsection
