@@ -31,14 +31,17 @@ Route::post('/project/edit', 'ProjectController@edit');
 Route::get('/project/{id}', 'ProjectController@getById')->where('id', '[0-9]+');
 Route::delete('/project/delete', 'ProjectController@delete');
 Route::patch('/project/manage-status','ProjectController@manageStatus');
-Route::get('/project/{id}/apply', 'ProjectController@showApplyForm');
-Route::post('/project/{id}/apply', 'ProjectController@apply');
+Route::get('/project/{id}/apply', 'ProjectController@showApplyForm')->where('id', '[0-9]+');
+Route::post('/project/{id}/apply', 'ProjectController@apply')->where('id', '[0-9]+');
 
 //home page
 Route::get('/home', 'HomeController@index');
 
 //user profile
 Route::get('/user/{id}', 'UserController@index')->where('id', '[0-9]+');
+Route::get('/user/{id}/edit', 'UserController@edit')->where('id', '[0-9]+');
+Route::post('/user/{id}/edit', 'UserController@update')->where('id', '[0-9]+');
+
 
 //admin page
 Route::get('/admin', 'AdminController@index');

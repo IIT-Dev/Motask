@@ -6,6 +6,8 @@ use App\User;
 use App\Project;
 use App\Applicant;
 use Auth;
+use Validator;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -67,6 +69,89 @@ class UserController extends Controller
             'user' => $user,
             'table_title' => $table_title,
             'projects' => $projects,
+            ]);
+    }
+
+    public function update(Request $request, $id){
+        $requester_id = Auth::user()->id;
+        $requester = User::find($requester_id);
+        if ($requester == null) {
+            abort(404);
+        }
+
+        //deny edit other's profile
+        if (Auth::user()->id != $id) {
+            abort(403);
+        }
+
+        //retrieve user
+        $user = User::find($id);
+        if ($user == null) {
+            abort(404);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'line' => 'required|max:255',
+            'phone' => 'required|max:255',
+            'linkedin' => 'required|max:255',
+            'git' => 'required|max:255'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/')
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        // $this->authorize('update', $requester);
+
+        $requester->phone = $request->phone;
+        $requester->linkedin= $request->linkedin;
+        $requester->git = $request->git;
+        if ($requester->line != null) {
+            $requester->line = $request->line;
+        } else {
+            $requester->line = '-';
+        }
+        if ($requester->phone != null) {
+            $requester->phone = $request->phone;
+        } else {
+            $requester->phone = '-';
+        }
+        if ($requester->linkedin != null) {
+            $requester->linkedin = $request->linkedin;
+        } else {
+            $requester->linkedin= '-';
+        }
+        if ($requester->git != null) {
+            $requester->git = $request->git;
+        } else {
+            $requester->git = '-';
+        }
+        $requester->save();
+
+        return redirect('/user/'.$requester_id);
+    }
+
+    public function edit($id){
+        $requester_id = Auth::user()->id;
+        $requester = User::find($requester_id);
+        if ($requester == null) {
+            abort(404);
+        }
+
+        //deny edit other's profile
+        if (Auth::user()->id != $id) {
+            abort(403);
+        }
+
+        //retrieve user
+        $user = User::find($id);
+        if ($user == null) {
+            abort(404);
+        }
+        return view('user.edit', [
+            'user' => $user
             ]);
     }
 }

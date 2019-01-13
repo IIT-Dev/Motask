@@ -84,6 +84,9 @@
 						</div>
 					</div>
 				</div>
+				<div>
+					<center><a href="{{url('/user/'.Auth::user()->id).'/edit'}}" class="btn btn-primary dark-grey motask-button">Edit Profile</a></center>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-8 col-md-offset-2">
