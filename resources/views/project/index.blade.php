@@ -145,13 +145,14 @@
                         
                         @endcan
                     </div>
-                    <br><br>
-                    <!-- List of Applicants -->
-                    @if ($applicants != null)
+                    <br><br>   
+                </div>
+                <!-- List of Applicants -->
+                @if ($applicants != null)
                         @if ($applicants == 'None')
                             <h3>No applicants yet</h3>
                         @else
-                            <div class="col-md-8 col-md-offset-2">
+                            <div class="col-md-16 col-md-offset-0">
                                 <h2>List of Applicants</h2>
                                 <h5>click the name to check profile</h5>
                                 <table class="table table-hover">
@@ -173,8 +174,8 @@
                             </div>
                         @endif
                     @endif
-                </div>
             </div>
+            
         </div>
     </div>
 </main>

@@ -89,48 +89,51 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-8 col-md-offset-2">
-			<h3>{{$table_title}}</h3>
-			<table class="table table-hover">
-			  	<tr>
-				    <th>Title</th>
-					@if($user->role!= 'programmer')
-					<th></th>
-					@endif
-				    <th>Status</th>
-					@if($user->role!= 'programmer')
-					<th>Applicants</th>
-					<th>Notes</th>
-					@endif
-			  	</tr>
-			  	@foreach($projects as $project)
+		@if($user->role!= 'programmer')
+			<div class="col-md-8 col-md-offset-2">
+				<h3>{{$table_title}}</h3>
+				<table class="table table-hover">
 					<tr>
-						<td><a href="/project/{{$project->id}}">{{$project->title}}</a></td>
+						<th>Title</th>
 						@if($user->role!= 'programmer')
-						<td>
-							<a href="/project/edit?id={{$project->id}}">
-								<i class="fa fa-edit" aria-hidden="true"></i>&nbsp;
-							</a>
-						</td>
-						<td>
-							<select id="change-status" data-id="{{$project->id}}" required>
-								<option value="Open" {{isset($project->status) && $project->status=='Open'? 'selected':''}}>Open</option>
-								<option value="In Progress" {{isset($project->status) && $project->status=='In Progress'? 'selected':''}}>In Progress</option>
-								<option value="Closed" {{isset($project->status) && $project->status=='Closed'? 'selected':''}}>Closed</option>
-							</select>
-						</td>
-						<td>{{$project->applicants}}</td>
-						<td>{{$project->notes}}</td>
-						@else($user->role == 'programmer')
-							<td>{{$project->status}}</td>							
+						<th></th>
+						@endif
+						<th>Status</th>
+						@if($user->role!= 'programmer')
+						<th>Applicants</th>
+						<th>Notes</th>
 						@endif
 					</tr>
-				@endforeach
-			</table>
-		</div>
+					@foreach($projects as $project)
+						<tr>
+							<td><a href="/project/{{$project->id}}">{{$project->title}}</a></td>
+							
+							<td>
+								<a href="/project/edit?id={{$project->id}}">
+									<i class="fa fa-edit" aria-hidden="true"></i>&nbsp;
+								</a>
+							</td>
+							<td>
+								<select id="change-status" data-id="{{$project->id}}" required>
+									<option value="Open" {{isset($project->status) && $project->status=='Open'? 'selected':''}}>Open</option>
+									<option value="In Progress" {{isset($project->status) && $project->status=='In Progress'? 'selected':''}}>In Progress</option>
+									<option value="Closed" {{isset($project->status) && $project->status=='Closed'? 'selected':''}}>Closed</option>
+								</select>
+							</td>
+							<td>{{$project->applicants}}</td>
+							<td>{{$project->notes}}</td>			
+						</tr>
+					@endforeach
+				</table>
+			</div>
+		@endif
 		<div class="col-md-8 col-md-offset-2">
+		&nbsp;
 			<h3>Applied Projects</h3>
-			<table class="table table-hover">
+			@if($applied->isEmpty())
+				<h5>You haven't applied any projects yet.</h5>
+			@else
+				<table class="table table-hover">
 					<tr>
 					<th>Date</th>
 					<th>Title</th>
@@ -139,15 +142,16 @@
 					<th>Questions</th>
 					</tr>
 					@foreach($applied as $app)
-					<tr>
-						<td>{{date('j M y - g.i', strtotime($app->created_at))}}</td>
-						<td><a href="/project/{{$app->project_id}}">{{$app->project_title}}</a></td>
-						<td>{{$app->status}}</td>
-						<td>{{$app->manpro}}</td>
-						<td>{{$app->questions}}</td>
-					</tr>
-				@endforeach
-			</table>
+						<tr>
+							<td>{{date('j M y - g.i', strtotime($app->created_at))}}</td>
+							<td><a href="/project/{{$app->project_id}}">{{$app->project_title}}</a></td>
+							<td>{{$app->status}}</td>
+							<td>{{$app->manpro}}</td>
+							<td>{{$app->questions}}</td>
+						</tr>
+					@endforeach
+				</table>
+			@endif
 		</div>
 	</div>
 </main>
