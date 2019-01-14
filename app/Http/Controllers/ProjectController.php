@@ -200,6 +200,10 @@ class ProjectController extends Controller
 
     public function showApplyForm(Request $request)
     {
+        // if the user does not have `Line ID`, redirect to profile
+        if (Auth::user()->line == '-') {
+            return redirect('/user/'.Auth::user()->id)->with('redirect', true);
+        }
         $project = Project::find($request->input('project_id'));
 
         return view('project.apply')->with('project_id', $project);

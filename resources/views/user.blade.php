@@ -22,6 +22,9 @@
 	<div class='container'>
 		<div class="col-md-8 col-md-offset-2">
 			<div id="alert-area">
+				@if ($user->line == '-')
+					<div id="alertdiv" class="alert alert-warning"><a class="close" data-dismiss="alert">×</a><span>Please fill in your Line ID before applying</span></div>
+				@endif
 			</div>
 			{{--Profile--}}
 			<div class="profile">
