@@ -60,21 +60,21 @@ $(document).on('change', '#change-status', function () {
 
 function takeProject(manpro_id, project_id) {
 	$.ajax({
-        type: 'PATCH',
-        url: '/project/take',
-        data: {
-        	'manpro_id': manpro_id,
-        	'project_id': project_id,
-    	},
-        success: function (result) {
-			window.location.replace('/home');
+		type: 'PATCH',
+		url: '/project/take',
+		data: {
+			'manpro_id': manpro_id,
+			'project_id': project_id,
+		},
+		success: function (result) {
+			window.location.replace('/project/' + project_id);
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
 			if (xhr.status == 403) {
 				window.location.replace('/forbidden');
 			}
 		}
-    });
+	});
 }
 
 function deleteProject(id) {

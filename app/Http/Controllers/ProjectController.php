@@ -249,6 +249,6 @@ class ProjectController extends Controller
         $project->manpro_id = $request->input('manpro_id');
         $project->save();
 
-        return redirect('/home');
+        return response('OK', 200);
     }
 }
