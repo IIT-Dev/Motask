@@ -150,7 +150,7 @@
                 <!-- List of Applicants -->
                 @if ($applicants != null)
                         @if ($applicants == 'None')
-                            <h3>No applicants yet</h3>
+                            <h3><i>No applicants yet</i></h3>
                         @else
                             <div class="col-md-16 col-md-offset-0">
                                 <h2>List of Applicants</h2>

@@ -43,26 +43,23 @@ class UserController extends Controller
             abort(404);
         }
 
-        $projects = array();
+        $projectsOpened = array();
+        $projectsUnOpened = array();
         $applied = array();
         //retrieve projects based on role
-        if ($user->role == 'programmer') {
-            //if user is a programmer, have a list of projects taken and applied
-            $table_title = 'Projects Taken';
-            $projects = $user->projects;
-        } elseif ($user->role == 'project_manager') {
-            $table_title = 'Projects Created';
-            $projects = Project::where('created_by', $user->email)->get();
+        if ($user->role == 'project_manager') {
+            $projectsOpened = Project::where([['created_by', $user->email], ['status', 'Open']])->get();
+            $projectsUnOpened = Project::where([['created_by', $user->email], ['status', '!=', 'Open']])->get();
         } elseif ($user->role == 'admin') {
-            $table_title = 'All Projects';
-            $projects = Project::all();
+            $projectsOpened = Project::where('status', 'Open')->get();
+            $projectsUnOpened = Project::where('status', '!=', 'Open')->get();
         } elseif ($user->role == 'marketing') {
-            $table_title = 'Projects Created';
-            $projects = Project::where('created_by', $user->email)->get();
+            $projectsOpened = Project::where([['created_by', $user->email], ['status', 'Open']])->get();
+            $projectsUnOpened = Project::where([['created_by', $user->email], ['status', '!=', 'Open']])->get();
         }
 
         if ($user->role != 'programmer') {
-            foreach ($projects as $project) {
+            foreach ($projectsOpened as $project) {
                 $project->applicants = Applicant::where('project_id', $project->id)->count();
             }
         }
@@ -85,8 +82,8 @@ class UserController extends Controller
 
         return view('user', [
             'user' => $user,
-            'table_title' => $table_title,
-            'projects' => $projects,
+            'projectsOpened' => $projectsOpened,
+            'projectsUnOpened' => $projectsUnOpened,
             'applied' => $applications,
             ]);
     }

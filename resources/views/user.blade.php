@@ -94,23 +94,22 @@
 		</div>
 		@if($user->role!= 'programmer')
 			<div class="col-md-8 col-md-offset-2">
-				<h3>{{$table_title}}</h3>
+				<h3>Opened Projects</h3>
+				@if($projectsOpened->isEmpty())
+					<h5><i>You don't have any Opened Projects</i></h5><br>
+				@else
+				<h5>(Open the project detail page to see list of applicants)</h5>
 				<table class="table table-hover">
 					<tr>
 						<th>Title</th>
-						@if($user->role!= 'programmer')
 						<th></th>
-						@endif
 						<th>Status</th>
-						@if($user->role!= 'programmer')
 						<th>Applicants</th>
 						<th>Notes</th>
-						@endif
 					</tr>
-					@foreach($projects as $project)
+					@foreach($projectsOpened as $project)
 						<tr>
 							<td><a href="/project/{{$project->id}}">{{$project->title}}</a></td>
-							
 							<td>
 								<a href="/project/edit?id={{$project->id}}">
 									<i class="fa fa-edit" aria-hidden="true"></i>&nbsp;
@@ -129,13 +128,51 @@
 						</tr>
 					@endforeach
 				</table>
+				@endif
+			</div>
+			<div class="col-md-8 col-md-offset-2">
+			&nbsp;
+				<h3>In Progress & Closed Projects</h3>
+				@if($projectsUnOpened->isEmpty())
+					<h5><i>You don't have any In Progress or Closed Projects</i></h5><br>
+				@else
+				<table class="table table-hover">
+					<tr>
+						<th>Title</th>
+						<th></th>
+						<th>Status</th>
+						<th>Programmers</th>
+						<th>Notes</th>		
+					</tr>
+					@foreach($projectsUnOpened as $project)
+						<tr>
+							<td><a href="/project/{{$project->id}}">{{$project->title}}</a></td>
+							<td>
+								<a href="/project/edit?id={{$project->id}}">
+									<i class="fa fa-edit" aria-hidden="true"></i>&nbsp;
+								</a>
+							</td>
+							<td>
+								<select id="change-status" data-id="{{$project->id}}" required>
+									<option value="Open" {{isset($project->status) && $project->status=='Open'? 'selected':''}}>Open</option>
+									<option value="In Progress" {{isset($project->status) && $project->status=='In Progress'? 'selected':''}}>In Progress</option>
+									<option value="Done" {{isset($project->status) && $project->status=='Done'? 'selected':''}}>Done</option>
+									<option value="Canceled" {{isset($project->status) && $project->status=='Canceled'? 'selected':''}}>Canceled</option>
+								</select>
+							</td>
+							<td>{{$project->applicants}}</td>
+							<td>{{$project->notes}}</td>			
+						</tr>
+					@endforeach
+				</table>
+				@endif
 			</div>
 		@endif
 		<div class="col-md-8 col-md-offset-2">
 		&nbsp;
 			<h3>Applied Projects</h3>
 			@if($applied->isEmpty())
-				<h5>You haven't applied any projects yet.</h5>
+				<h5><i>You haven't applied any projects yet.</i></h5>
 			@else
 				<table class="table table-hover">
 					<tr>
