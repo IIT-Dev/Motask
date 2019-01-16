@@ -120,7 +120,8 @@
 								<select id="change-status" data-id="{{$project->id}}" required>
 									<option value="Open" {{isset($project->status) && $project->status=='Open'? 'selected':''}}>Open</option>
 									<option value="In Progress" {{isset($project->status) && $project->status=='In Progress'? 'selected':''}}>In Progress</option>
-									<option value="Closed" {{isset($project->status) && $project->status=='Closed'? 'selected':''}}>Closed</option>
+									<option value="Done" {{isset($project->status) && $project->status=='Done'? 'selected':''}}>Done</option>
+									<option value="Canceled" {{isset($project->status) && $project->status=='Canceled'? 'selected':''}}>Canceled</option>
 								</select>
 							</td>
 							<td>{{$project->applicants}}</td>

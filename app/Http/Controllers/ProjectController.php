@@ -188,8 +188,10 @@ class ProjectController extends Controller
             $status = 'Open.';
         } elseif ($project->status == 'In Progress') {
             $status = 'In Progress.';
-        } elseif ($project->status == 'Closed') {
-            $status = 'Closed.';
+        } elseif ($project->status == 'Done') {
+            $status = 'Done.';
+        } elseif ($project->status == 'Canceled') {
+            $status = 'Canceled.';
         }
 
         return response()->json([
