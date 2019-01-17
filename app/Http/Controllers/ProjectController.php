@@ -253,4 +253,21 @@ class ProjectController extends Controller
 
         return response('OK', 200);
     }
+
+    public function cancelAsPM(Request $request)
+    {
+        $project = Project::find($request->input('project_id'));
+        if ($project == null) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Project not found',
+            ], 200);
+        }
+        $this->authorize('cancelAsPM', $project);
+
+        $project->manpro_id = null;
+        $project->save();
+
+        return response('OK', 200);
+    }
 }

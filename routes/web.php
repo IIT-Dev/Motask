@@ -34,6 +34,7 @@ Route::patch('/project/manage-status','ProjectController@manageStatus');
 Route::get('/project/{id}/apply', 'ProjectController@showApplyForm')->where('id', '[0-9]+');
 Route::post('/project/{id}/apply', 'ProjectController@apply')->where('id', '[0-9]+');
 Route::patch('/project/take', 'ProjectController@take');
+Route::delete('/project/cancel', 'ProjectController@cancelAsPM');
 
 //home page
 Route::get('/home', 'HomeController@index');

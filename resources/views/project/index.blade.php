@@ -138,9 +138,15 @@
                                     <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take As PM
                                 </button>
                             @else
-                                <button class="btn btn-primary lightblue motask-button btn-lg" disabled>
-                                    <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take As PM
-                                </button>
+                                @if ($requester_id == $project->manpro_id)
+                                    <button onclick="cancelTakeProject({{$project->id}})" class="btn btn-primary red motask-button btn-lg">
+                                        <span class="fa fa-ban fa-lg" aria-hidden="true"></span> Cancel As PM
+                                    </button>
+                                @else
+                                    <button class="btn btn-primary lightblue motask-button btn-lg" disabled>
+                                        <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take As PM
+                                    </button>
+                                @endif
                             @endif
                         
                         @endcan

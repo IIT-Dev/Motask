@@ -77,6 +77,24 @@ function takeProject(manpro_id, project_id) {
 	});
 }
 
+function cancelTakeProject(project_id) {
+	$.ajax({
+		type: 'DELETE',
+		url: '/project/cancel',
+		data: {
+			'project_id': project_id,
+		},
+		success: function (result) {
+			window.location.replace('/project/' + project_id);
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			if (xhr.status == 403) {
+				window.location.replace('/forbidden');
+			}
+		}
+	});
+}
+
 function deleteProject(id) {
 	$.ajax({
 		url: '/project/delete',

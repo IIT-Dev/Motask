@@ -70,4 +70,9 @@ class ProjectPolicy
         return ($user->role == 'project_manager' || $user->role == 'admin');
     }
 
+    public function cancelAsPM(User $user, Project $project)
+    {
+        return ($user->id == $project->manpro_id);
+    }
+
 }
