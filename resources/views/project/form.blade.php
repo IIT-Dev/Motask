@@ -35,7 +35,7 @@
 				<input type="text" class="form-control motask-input" name="deadline" value='{{isset($project->deadline)? $project->deadline:""}}' required placeholder="Deadline" onmouseenter="(this.type='date')">
 			</div>
 			<div class="col-md-6">
-				<input type="number" class="form-control motask-input" name="number_of_programmers" min="1" max="10" value='{{isset($project->total_programmer)? $project->total_programmer:""}}' required placeholder="Programmers*">
+				<input type="number" class="form-control motask-input" name="number_of_programmers" min="1" max="10" value='{{isset($project->total_programmer)? $project->total_programmer:""}}' required placeholder="Total Programmers*">
 			</div>
 		</div>
 		<div class="row row-form">
@@ -43,6 +43,13 @@
 				<textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="specification_desc"  required placeholder="Specification*">{{isset($project->specification_desc)? $project->specification_desc:""}}</textarea>
 			</div>
 		</div>
+		@if($action!='create')
+		<div class="row row-form">
+			<div class="col-md-12">
+				<textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="programmers"  placeholder="List of Programmers">{{$project->programmers!='-'? $project->programmers:""}}</textarea>
+			</div>
+		</div>
+		@endif
 		<div class="row row-form">
 			<div class="col-md-12">
 				<textarea onkeyup="AutoGrowTextArea(this)" style="overflow:hidden" class="form-control motask-input" name="notes" placeholder="Notes (will only be visible to project managers and marketings)">{{isset($project->notes)? $project->notes:""}}</textarea>

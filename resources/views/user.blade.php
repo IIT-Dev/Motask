@@ -160,7 +160,7 @@
 									<option value="Canceled" {{isset($project->status) && $project->status=='Canceled'? 'selected':''}}>Canceled</option>
 								</select>
 							</td>
-							<td>{{$project->applicants}}</td>
+							<td>{{$project->programmers}}</td>
 							<td>{{$project->notes}}</td>			
 						</tr>
 					@endforeach

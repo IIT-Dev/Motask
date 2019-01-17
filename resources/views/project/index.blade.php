@@ -47,7 +47,7 @@
                                 <i class="fa fa-square-o fa-stack-2x"></i>
                                 <i class="fa fa-users fa-stack-1x"></i>
                             </span> 
-                            <h6>Programmers</h6>
+                            <h6>Total Programmers</h6>
                             <div class="bg-details bg-dark-grey amber">
                                 <h5>{{$project->total_programmer}}</h5>
                             </div>
@@ -91,6 +91,11 @@
                             <h4 class="montserrat">Description</h4>
                             <h5 class="dark-grey">
                                 <?php echo nl2br($project->specification_desc); ?>
+                            </h5>
+                            <br>
+                            <h4 class="montserrat">Programmers</h4>
+                            <h5 class="dark-grey">
+                                <?php echo nl2br($project->programmers); ?>
                             </h5>
                         </div>
                     </div>

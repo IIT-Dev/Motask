@@ -130,6 +130,7 @@ class ProjectController extends Controller
             'budget' => 'numeric',
             'specification_desc' => 'required|max:300',
             'notes' => 'max:300',
+            'programmers' => 'max:255',
         ]);
 
         if ($validator->fails()) {
@@ -152,6 +153,7 @@ class ProjectController extends Controller
         }
         $project->project_owner = $request->project_owner;
         $project->specification_desc = $request->specification_desc;
+        $project->programmers = $request->programmers;
         $project->notes = $request->notes;
         $project->created_by = Auth::user()->email;
         $project->save();
