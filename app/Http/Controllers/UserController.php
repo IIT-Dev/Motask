@@ -32,8 +32,8 @@ class UserController extends Controller
             abort(404);
         }
 
-        //deny access on others profile except for admin
-        if (Auth::user()->id != $id && $requester->role != 'admin') {
+        // Deny access on others profile except for admin
+        if (Auth::user()->id != $id && $requester->role != 'admin' && $requester->role != 'project_manager') {
             abort(403);
         }
 
@@ -41,6 +41,11 @@ class UserController extends Controller
         $user = User::find($id);
         if ($user == null) {
             abort(404);
+        }
+
+        // Deny access on admin's profile
+        if ($user->role == 'admin' && $requester->role != 'admin') {
+            abort(403);
         }
 
         $projectsOpened = array();
