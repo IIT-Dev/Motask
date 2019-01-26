@@ -85,6 +85,18 @@
 								{{$user->git}}
 							</div>
 						</div>
+						<div class="col-xs-6 col-md-12 profile-info">
+							<div class="profile-title">
+								<span class="card-title montserrat">Resume</span>
+							</div>
+							<div class="profile-content">
+								@if ($user->resume != null)
+									<a href="{{ asset('/storage/resumes/'.$user->resume) }}">{{$user->name}}</a>
+								@else
+									<i>No Resume</i>
+								@endif
+							</div>
+						</div>
 					</div>
 				</div>
 				<div>

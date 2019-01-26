@@ -8101,4 +8101,17 @@ footer a:hover {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+#drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  width: 350px;
+  font-family: sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+#drop-area.highlight {
+  border-color: purple;
+}
 /*# sourceMappingURL=app.css.map */

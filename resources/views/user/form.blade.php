@@ -1,5 +1,5 @@
 <!-- Form Post Project -->
-<form action="{{url('/user/'.Auth::user()->id.'/edit')}}" method="POST">
+<form action="{{url('/user/'.Auth::user()->id.'/edit')}}" method="POST" enctype="multipart/form-data">
 	{{ csrf_field() }}
 	<div class="form-group">    
         <div class="edit-profile">
@@ -62,10 +62,18 @@
                     </div>
                 </div>
             </div>
-                <center><button type="submit" class="btn btn-primary dark-grey motask-button">
-                        <i class="glyphicon glyphicon-edit" aria-hidden="true"></i> Edit
-                    </button>
-                </center>
+            <div class="col-xs-6 col-md-12 profile-info">
+                <div class="profile-title">
+                    <br><span class="card-title montserrat">Resume</span>
+                </div>
+                <div class="profile-content" id="drop-area">
+                    <center><input type="file" class="edit-profile-content" name="resume" value='{{isset($user->git)? $user->git:""}}' placeholder="Resume" accept="application/pdf"></center>
+                </div>
+            </div>
+            <center><button type="submit" class="btn btn-primary dark-grey motask-button">
+                    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i> Edit
+                </button>
+            </center>
         </div>
 	</div>
 </form>
