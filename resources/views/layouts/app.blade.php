@@ -49,7 +49,7 @@
 
                     <!-- Branding Image -->
                     <a href="{{ url('/') }}">
-                        <img class="logo-iit" src="../img/iit-hor.png"/>
+                        <img class="logo-iit" src="../../img/iit-hor.png"/>
                     </a>
                 </div>
 
@@ -154,7 +154,7 @@
                     </h6>
                 </div>
                 <div class="col-md-3 text-center">
-                    <img src="../img/logo-hmif.jpg" style="width: 70px" />
+                    <img src="../../img/logo-hmif.jpg" style="width: 70px" />
                 </div>
             </div>
         </div>
