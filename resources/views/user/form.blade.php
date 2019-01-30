@@ -64,10 +64,10 @@
             </div>
             <div class="col-xs-6 col-md-12 profile-info">
                 <div class="profile-title">
-                    <br><span class="card-title montserrat">Resume</span>
+                    <br><span class="card-title montserrat">Resume / Portofolio</span>
                 </div>
                 <div class="profile-content" id="drop-area">
-                    <center><input type="file" class="edit-profile-content" name="resume" value='{{isset($user->git)? $user->git:""}}' placeholder="Resume" accept="application/pdf"></center>
+                    <center><input type="file" class="edit-profile-content" name="resume" value='{{isset($user->git)? $user->git:""}}' placeholder="Resume / Portofolio" accept="application/pdf"></center>
                 </div>
             </div>
             <center><button type="submit" class="btn btn-primary dark-grey motask-button">

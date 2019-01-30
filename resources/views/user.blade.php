@@ -87,13 +87,13 @@
 						</div>
 						<div class="col-xs-6 col-md-12 profile-info">
 							<div class="profile-title">
-								<span class="card-title montserrat">Resume</span>
+								<span class="card-title montserrat">Resume / Portofolio</span>
 							</div>
 							<div class="profile-content">
 								@if ($user->resume != null)
 									<a href="{{ asset('/storage/resumes/'.$user->resume) }}">{{$user->name}}</a>
 								@else
-									<i>No Resume</i>
+									<i>No Resume / Portofolio</i>
 								@endif
 							</div>
 						</div>
