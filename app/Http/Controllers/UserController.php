@@ -117,6 +117,7 @@ class UserController extends Controller
             'phone' => 'required|max:255',
             'linkedin' => 'required|max:255',
             'git' => 'required|max:255',
+            'resume' => 'nullable|file|max:2000',
         ]);
 
         if ($validator->fails()) {
@@ -150,6 +151,14 @@ class UserController extends Controller
         } else {
             $requester->git = '-';
         }
+        if($request->hasFile('resume')){
+            $filenameWithxt = $request->file('resume')->getClientOriginalName();
+            $filename = pathinfo($filenameWithxt, PATHINFO_FILENAME);
+            $ext = $request->file('resume')->getClientOriginalExtension();
+            $filenameToStore = Auth::user()->name.'.'.$ext;
+            $path = $request->file('resume')->storeAs('public/resumes', $filenameToStore);
+        }
+        $requester->resume = $filenameToStore;
         $requester->save();
 
         return redirect('/user/'.$requester_id);
