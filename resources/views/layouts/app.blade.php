@@ -138,8 +138,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h6>Wenny Yustalim</h6>
-                    <h6><i class="fa fa-phone fa-lg amber" aria-hidden="true"></i>&nbsp; +62 812 8780 6682</h6>
+                    <h6>Cornelius Yan M.</h6>
+                    <h6><i class="fa fa-phone fa-lg amber" aria-hidden="true"></i>&nbsp; +62 896 5410 8308</h6>
                 </div>
                 <div class="col-md-3">
                     <h6>About Us</h6>
