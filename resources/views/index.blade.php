@@ -31,7 +31,7 @@
             width: 100%;
             left: 0;
             top: 0;
-            padding-top: 120px;
+            padding-top: 20vh;
         }
     </style>
     
@@ -59,7 +59,7 @@
         <div class="container">
             <div class="content-login">
                 <img class="homepage-logo" src="../img/logo-new.png" />
-                <h1 style="font-size:45px"> Motask</h1>
+                <h1 style="font-size:8vh"> Motask</h1>
                 <h3>Place Where You Can Find Your Own Projects</h3>
                 <a href="auth/google" class="btn btn-warning btn-lg">
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Sign In
