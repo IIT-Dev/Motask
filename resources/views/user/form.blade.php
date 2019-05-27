@@ -1,5 +1,5 @@
-<!-- Form Post Project -->
-<form action="{{url('/user/'.Auth::user()->id.'/edit')}}" method="POST" enctype="multipart/form-data">
+<!-- Form Edit Profile -->
+<form action="{{url('/user/'.Auth::user()->id.'/edit')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
 	{{ csrf_field() }}
 	<div class="form-group">    
         <div class="edit-profile">

@@ -133,32 +133,32 @@ class UserController extends Controller
         $requester->git = $request->git;
         if ($requester->line != null) {
             $requester->line = $request->line;
-        } else {
-            $requester->line = '-';
-        }
+        } 
         if ($requester->phone != null) {
             $requester->phone = $request->phone;
-        } else {
-            $requester->phone = '-';
-        }
+        } 
         if ($requester->linkedin != null) {
             $requester->linkedin = $request->linkedin;
-        } else {
-            $requester->linkedin = '-';
-        }
+        } 
         if ($requester->git != null) {
             $requester->git = $request->git;
-        } else {
-            $requester->git = '-';
-        }
+        } 
         if($request->hasFile('resume')){
             $filenameWithxt = $request->file('resume')->getClientOriginalName();
             $filename = pathinfo($filenameWithxt, PATHINFO_FILENAME);
             $ext = $request->file('resume')->getClientOriginalExtension();
-            $filenameToStore = Auth::user()->name.'.'.$ext;
-            $path = $request->file('resume')->storeAs('public/resumes', $filenameToStore);
-        }
-        $requester->resume = $filenameToStore;
+            if($requester->resume != null){
+                $filenameToStore = Auth::user()->name.'.'.$ext;
+                $path = $request->file('resume')->storeAs('public/resumes', $filenameToStore);
+            } else {
+                if(\File::exists(public_path('resumes/'.Auth::user()->name.'.'.$ext))){
+                    \File::delete(public_path('resumes/'.Auth::user()->name.'.'.$ext));
+                }
+                $filenameToStore = Auth::user()->name.'.'.$ext;
+                $path = $request->file('resume')->storeAs('public/resumes', $filenameToStore);
+            }
+            $requester->resume = $filenameToStore;
+        } 
         $requester->save();
 
         return redirect('/user/'.$requester_id);
