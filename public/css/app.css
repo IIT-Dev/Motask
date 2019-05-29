@@ -14,6 +14,7 @@ html {
 
 body {
   margin: 0;
+  height: 100vh;
 }
 
 article,
@@ -84,6 +85,10 @@ mark {
 
 small {
   font-size: 80%;
+}
+
+footer {
+  height: 100%;
 }
 
 sub,
