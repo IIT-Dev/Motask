@@ -165,6 +165,10 @@
   color: #ffffff;
 }
 
+input[type="date"].form-control {
+    padding-top: 0;
+}
+
 option {
   color: #323739;
 }
