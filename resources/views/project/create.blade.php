@@ -34,7 +34,7 @@
 			<div class="card bg-transparent">
 		  		<div class="card-block">
 		    		<!-- Form Post Project -->
-		    		@include('project.form');
+		    		@include('project.form')
 		  		</div>
 			</div>
 		</div>
