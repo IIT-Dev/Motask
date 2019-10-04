@@ -3,11 +3,11 @@
 	{{ csrf_field() }}
 	<div class="form-group">
 		<input type="hidden" name="id" value="{{isset($project->id)? $project->id:''}}">
-		<div class="row row-from">
-			<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-6 row-form">
 				<input type="string" class="form-control motask-input" name="project_owner" value='{{isset($project->project_owner)? $project->project_owner:""}}' placeholder="Client Name*">
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 row-form">
 				<select class="form-control motask-input" name="category" required>
 					<option selected disabled value="">Category*</option>
 					<option value="Website" {{isset($project->category) && $project->category=='Website'? 'selected':''}}>Website</option>
@@ -30,11 +30,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="row row-form">
-			<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-6 row-form">
 				<input type="text" class="form-control motask-input" name="deadline" value='{{isset($project->deadline)? $project->deadline:""}}' required placeholder="Deadline" onfocus="(this.type='date')">
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 row-form">
 				<input type="number" class="form-control motask-input" name="number_of_programmers" min="1" max="10" value='{{isset($project->total_programmer)? $project->total_programmer:""}}' required placeholder="Total Programmers*">
 			</div>
 		</div>
