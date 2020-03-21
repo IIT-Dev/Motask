@@ -55,3 +55,7 @@ Route::get("/forbidden", function(){
 });
 
 Auth::routes();
+
+
+//Test
+Route::get("/testing", function(){return view('test');});
