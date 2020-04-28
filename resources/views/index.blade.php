@@ -61,7 +61,7 @@
                 <img class="homepage-logo" src="../img/logo-new.png" />
                 <h1 style="font-size:8vh"> Motask</h1>
                 <h3>Place Where You Can Find Your Own Projects</h3>
-                <h4>For more information and user guide, <a href="http://bit.ly/TutorialMotask">Click Me!</a></h4>
+                <h4>For more information and user guide, <a href="http://bit.ly/TutorialMotask">click me!</a></h4>
                 <a href="auth/google" class="btn btn-warning btn-lg">
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Sign In
                 </a>
