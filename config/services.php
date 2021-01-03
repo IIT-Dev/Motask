@@ -36,8 +36,8 @@ return [
     ],
 
     'google' => [
-        'client_id' => '41673146229-i9u3d8kelaok1434alc000mnecogc6v5.apps.googleusercontent.com',
-        'client_secret' => '8NuiFkNqlIZdCOR-nOGuV0MT',
-        'redirect' => env('APP_URL').'/auth/google/callback',
+        'client_id' => env('GAUTH_CLIENT_ID'),
+        'client_secret' => env('GAUTH_CLIENT_SECRET'),
+        'redirect' => env('APP_URL') . '/auth/google/callback',
     ],
 ];
