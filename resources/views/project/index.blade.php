@@ -26,7 +26,7 @@
                             <span class="fa-stack fa-3x icon-details">
                                 <i class="fa fa-square-o fa-stack-2x"></i>
                                 <i class="fa fa-tags fa-stack-1x "></i>
-                            </span> 
+                            </span>
                             <h6>Category</h6>
                             <div class="bg-details bg-dark-grey amber">
                                 <h5>{{$project->category}}</h5>
@@ -36,7 +36,7 @@
                             <span class="fa-stack fa-3x icon-details">
                                 <i class="fa fa-square-o fa-stack-2x"></i>
                                 <i class="fa fa-hourglass-half fa-stack-1x"></i>
-                            </span> 
+                            </span>
                             <h6>Deadline</h6>
                             <div class="bg-details bg-dark-grey amber">
                                 <h5>{{date('j F Y', strtotime($project->deadline))}}</h5>
@@ -46,7 +46,7 @@
                             <span class="fa-stack fa-3x icon-details">
                                 <i class="fa fa-square-o fa-stack-2x"></i>
                                 <i class="fa fa-users fa-stack-1x"></i>
-                            </span> 
+                            </span>
                             <h6>Total Programmers</h6>
                             <div class="bg-details bg-dark-grey amber">
                                 <h5>{{$project->total_programmer}}</h5>
@@ -56,7 +56,7 @@
                             <span class="fa-stack fa-3x icon-details">
                                 <i class="fa fa-square-o fa-stack-2x"></i>
                                 <i class="fa fa-dollar fa-stack-1x"></i>
-                            </span> 
+                            </span>
                             <h6>Budget</h6>
                             <div class="bg-details bg-dark-grey amber">
                                 <h5>{{$project->budget}}</h5>
@@ -73,15 +73,15 @@
                             <span class="fa-stack fa-3x icon-details">
                                 <i class="fa fa-square-o fa-stack-2x"></i>
                                 <i class="fa fa-user fa-stack-1x"></i>
-                            </span> 
+                            </span>
                         </div>
                         <div class="col-md-offset-1 col-lg-offset-0 col-md-9 col-lg-10">
                             <h6></h6>
                             <div class="bg-details bg-dark-grey amber">
                                 @if ($project->manpro_id == null)
-                                    <h5>There's no PM yet</h5>
+                                <h5>There's no PM yet</h5>
                                 @else
-                                    <h5>{{$manpro->name}}</h5> 
+                                <h5>{{$manpro->name}}</h5>
                                 @endif
                             </div>
                         </div>
@@ -106,17 +106,18 @@
                             <h5 class="dark-grey">
                                 Feel free to contact us if you are interested to get details of the project.
                                 @if ($project->manpro_id == null)
-                                    <b>
-                                        <br><i class="fa fa-envelope"></i>
-                                            <a class="email" href="mailto:{{$creator->email}}">{{$creator->email}}</a>
-                                        <br><i class="fab fa-line"></i> {{$creator->line}}
-                                    </b>
+                                <b>
+                                    <br><i class="fa fa-envelope"></i>
+                                    <a class="email" href="mailto:{{$creator->email}}">{{$creator->email}}</a>
+                                    <br><i class="fab fa-line"></i> {{$creator->line}}
+                                </b>
                                 @else
-                                    <b>
-                                        <br><i class="fa fa-envelope"></i> {{$manpro->email}}
-                                        <br><i class="fab fa-line"></i> {{$manpro->line}}
-                                    </b>
-                                @endif 
+                                <b>
+                                    <br><i class="fa fa-envelope"></i>
+                                    <a class="email" href="mailto:{{$manpro->email}}">{{$manpro->email}}</a>
+                                    <br><i class="fab fa-line"></i> {{$manpro->line}}
+                                </b>
+                                @endif
                             </h5>
                         </div>
                     </div>
@@ -139,55 +140,54 @@
                         </a>
                         <!-- Take As PM Button -->
                         @can('takeAsPM', $project)
-                            @if ($project->manpro_id == null)
-                                <button onclick="takeProject({{$requester_id}}, {{$project->id}})" class="btn btn-primary lightblue motask-button btn-lg">
-                                    <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take As PM
-                                </button>
-                            @else
-                                @if ($requester_id == $project->manpro_id)
-                                    <button onclick="cancelTakeProject({{$project->id}})" class="btn btn-primary red motask-button btn-lg">
-                                        <span class="fa fa-ban fa-lg" aria-hidden="true"></span> Cancel As PM
-                                    </button>
-                                @else
-                                    <button class="btn btn-primary lightblue motask-button btn-lg" disabled>
-                                        <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take As PM
-                                    </button>
-                                @endif
-                            @endif
-                        
+                        @if ($project->manpro_id == null)
+                        <button onclick="takeProject({{$requester_id}}, {{$project->id}})" class="btn btn-primary lightblue motask-button btn-lg">
+                            <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take As PM
+                        </button>
+                        @else
+                        @if ($requester_id == $project->manpro_id)
+                        <button onclick="cancelTakeProject({{$project->id}})" class="btn btn-primary red motask-button btn-lg">
+                            <span class="fa fa-ban fa-lg" aria-hidden="true"></span> Cancel As PM
+                        </button>
+                        @else
+                        <button class="btn btn-primary lightblue motask-button btn-lg" disabled>
+                            <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Take As PM
+                        </button>
+                        @endif
+                        @endif
+
                         @endcan
                     </div>
-                    <br><br>   
+                    <br><br>
                 </div>
                 <!-- List of Applicants -->
                 @if ($applicants != null)
-                        @if ($applicants == 'None')
-                            <h3><i>No applicants yet</i></h3>
-                        @else
-                            <div class="col-md-16 col-md-offset-0">
-                                <h2>List of Applicants</h2>
-                                <h5>click the name to check profile</h5>
-                                <table class="table table-hover">
-                                    <tr>
-                                        <th>Date</th>
-                                        <th>Name</th>
-                                        <th>Motive</th>
-                                        <th>Questions</th>
-                                    </tr>
-                                    @foreach($applicants as $ap)
-                                        <tr>
-                                            <td>{{date('j M y - g.i', strtotime($ap->created_at))}}</td>
-                                            <td><a href="{{url('/user/'.$ap->applicant_id)}}">{{$ap->applicant_name}}</a></td>
-                                            <td>{{$ap->motive}}</td>
-                                            <td>{{$ap->questions}}</td>
-                                        </tr>
-                                    @endforeach
-                                </table>                            
-                            </div>
-                        @endif
-                    @endif
+                @if ($applicants == 'None')
+                <h3><i>No applicants yet</i></h3>
+                @else
+                <div class="col-md-16 col-md-offset-0">
+                    <h2>List of Applicants</h2>
+                    <h5>click the name to check profile</h5>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Motive</th>
+                            <th>Questions</th>
+                        </tr>
+                        @foreach($applicants as $ap)
+                        <tr>
+                            <td>{{date('j M y - g.i', strtotime($ap->created_at))}}</td>
+                            <td><a href="{{url('/user/'.$ap->applicant_id)}}">{{$ap->applicant_name}}</a></td>
+                            <td>{{$ap->motive}}</td>
+                            <td>{{$ap->questions}}</td>
+                        </tr>
+                        @endforeach
+                    </table>
+                </div>
+                @endif
+                @endif
             </div>
-            
         </div>
     </div>
 </main>
