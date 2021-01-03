@@ -1,7 +1,10 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -10,7 +13,9 @@
         "laravel/socialite": "^3.0",
         "doctrine/dbal": "^2.7",
         "laravel/tinker": "~1.0",
-        "mopo922/laravel-treats": "^1.0"
+        "mopo922/laravel-treats": "^1.0",
+        "google/apiclient": "^2.7",
+        "phpmailer/phpmailer": "^6.2"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -19,7 +24,6 @@
         "phpunit/phpunit": "~5.7",
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*"
-
     },
     "autoload": {
         "classmap": [
