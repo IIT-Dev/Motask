@@ -296,7 +296,9 @@ Jangan lupa diproses ya! Semangat!';
     public function notifyProjectManager(Project $project, Applicant $applicant)
     {
         $googleClient = new Google_Client();
-        $googleClient->setAuthConfig(env('GMAIL_OAUTH_CRED_PATH'));
+        $googleClient->setClientId(env('GMAIL_CLIENT_ID'));
+        $googleClient->setClientSecret(env('GMAIL_CLIENT_SECRET'));
+
         $googleClient->addScope(Google_Service_Gmail::GMAIL_SEND);
         $googleClient->fetchAccessTokenWithRefreshToken(env('GMAIL_REFRESH_TOKEN'));
 
