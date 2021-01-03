@@ -107,7 +107,8 @@
                                 Feel free to contact us if you are interested to get details of the project.
                                 @if ($project->manpro_id == null)
                                     <b>
-                                        <br><i class="fa fa-envelope"></i> {{$creator->email}}
+                                        <br><i class="fa fa-envelope"></i>
+                                            <a class="email" href="mailto:{{$creator->email}}">{{$creator->email}}</a>
                                         <br><i class="fab fa-line"></i> {{$creator->line}}
                                     </b>
                                 @else
