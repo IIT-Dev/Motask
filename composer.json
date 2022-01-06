@@ -9,7 +9,7 @@
     "type": "project",
     "require": {
         "php": ">=7.1.0",
-        "laravel/framework": "5.5.*",
+        "laravel/framework": "5.8.*",
         "laravel/socialite": "^3.0",
         "doctrine/dbal": "^2.7",
         "laravel/tinker": "~1.0",
